@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Statistics for Psychologists"
+  title: "Archive: Statistics for Psychologists"
   favicon: "Images/favicon.png"
   page-navigation: true
   back-to-top-navigation: true
@@ -16,8 +16,8 @@ website:
   navbar:
     #logo: "Images/icon.png"
     left:
-      - text: Home
-        file: index.qmd
+      - text: Back to the Current Materials
+        href: https://lu-psy-r.github.io
 
 
   sidebar:
@@ -25,7 +25,7 @@ website:
     search: true
     collapse-level: 1
     contents: 
-      - section: "2023-24"
+      - section: "2023/2024"
         contents:
           - section: PSYC121
             contents: 2324/PSYC121/*

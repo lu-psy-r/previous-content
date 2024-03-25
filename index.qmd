@@ -3,14 +3,14 @@ title: "Statistics for Psychologists"
 page-layout: full
 anchor-sections: false
 image: "Images/icon.png"
-css: https://m1v0-temp.github.io/essentials/index.css
+css: https://m1v0-temp.github.io/essentials/archive/index.css
 filters: [_core/remove_title.lua]
 sidebar: true
 back-to-top-navigation: false
 ---
 
 ::: callout-warning
-**This website is under construction.**
+**This is the archive. Materials will not be updated.**
 :::
 
 ![](Images/LUPsychology.svg){fig-alt="University Logo" fig-align="center"}
