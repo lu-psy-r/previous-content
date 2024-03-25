@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "Previous_Content/index.html",
-    "href": "Previous_Content/index.html",
-    "title": "Previous Conent",
-    "section": "",
-    "text": "This page will have links to previous years content, so that students can still go through stored content.\nWe would only need to keep two or three years worth as once they leave it isn’t imperative they have access to the old material, and they can see the new stuff if needed.\n\n\n\n Back to top"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Statistics for Psychologists",
@@ -14,24 +7,10 @@
     "text": "Warning\n\n\n\nThis website is under construction.\n\n\n\n\n\n\n\n\nWelcome\n\nWelcome to Lancaster University’s Department of Psychology 2023/2024 modules on Statistics for Psychologists. This is your one-stop shop for all the lab materials you need for working with R and statistics.\n\n\n  \n    \n\n    \n      Year 1\n    \n    \n      MSc\n    \n    \n    \n    \n    \n    \n      Year 2\n    \n    \n      More"
   },
   {
-    "objectID": "more/index.html",
-    "href": "more/index.html",
-    "title": "Additional Content",
-    "section": "",
-    "text": "Command\nDescription\nWeek(s)\n\n\n\n\nfilter()\nFilter rows based on a condition\npsyc121/week2\n\n\nmutate()\nchoose which columns\npsyc122/week1"
-  },
-  {
-    "objectID": "previous/index.html",
-    "href": "previous/index.html",
-    "title": "Previous Conent",
+    "objectID": "2324/index.html",
+    "href": "2324/index.html",
+    "title": "Previous Content",
     "section": "",
     "text": "This page will have links to previous years content, so that students can still go through stored content.\nWe would only need to keep two or three years worth as once they leave it isn’t imperative they have access to the old material, and they can see the new stuff if needed.\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "more/index.html#glossary-of-commands",
-    "href": "more/index.html#glossary-of-commands",
-    "title": "Additional Content",
-    "section": "",
-    "text": "Command\nDescription\nWeek(s)\n\n\n\n\nfilter()\nFilter rows based on a condition\npsyc121/week2\n\n\nmutate()\nchoose which columns\npsyc122/week1"
   }
 ]
