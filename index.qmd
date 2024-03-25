@@ -3,7 +3,7 @@ title: "Statistics for Psychologists"
 page-layout: full
 anchor-sections: false
 image: "Images/icon.png"
-css: https://m1v0-temp.github.io/essentials/archive/index.css
+css: https://lu-psy-r.github.io/essentials/archive/index.css
 filters: [_core/remove_title.lua]
 sidebar: true
 back-to-top-navigation: false
