@@ -5,7 +5,7 @@ anchor-sections: false
 image: "Images/icon.png"
 css: https://m1v0-temp.github.io/essentials/index.css
 filters: [_core/remove_title.lua]
-sidebar: false
+sidebar: true
 back-to-top-navigation: false
 ---
 
@@ -23,36 +23,9 @@ date <- as.numeric(format(Sys.time(), "%Y"))
 ```
 
 ::: {.div style="font-size:2em;"}
-Welcome
+Previous Content
 :::
 
-Welcome to Lancaster University's Department of Psychology **`r date-1`/`r date`** modules on Statistics for Psychologists. This is your one-stop shop for all the lab materials you need for working with R and statistics.
+This is an archive of previous worksheets. They are **not** updated and if you are looking to follow along with the lectures in the labs, you should return to [the homepage](https://lu-psy-r.github.io) and click the appropriate year and then module.
 
-```{=html}
-
-<div class="container">
-  <div class="row">
-    <div class="col">
-
-    <a href="year1/">
-      <button type="button" class="btn btn-landing btn-lg">Year 1</button>
-    </a>
-    <a href="MSc/">
-      <button type="button" class="btn btn-landing btn-lg">MSc</button>
-    </a>
-    
-    </div>
-    <div class="col">
-    
-    <a href="year2/">
-      <button type="button" class="btn btn-landing btn-lg">Year 2</button>
-    </a>
-    <a href="more/">
-      <button type="button" class="btn btn-landing btn-lg">More</button>
-    </a>
-    
-    </div>
-  </div>
-</div>
-
-```
+The archived content is static and preserved for posterity. Unless you know exactly *what* you are looking through in the archive, it is strongly encouraged that you follow the current versions of the content. This is because this is actively updated and some functionality/interactivity/links in the archive may no longer work as expected. The current materials represent the information and content that we believe is the most valuable for you to understand about statistics and R, and should be favoured over the archive.
