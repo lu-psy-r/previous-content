@@ -36,9 +36,6 @@ website:
 
   page-footer:
     left: "Website developed by Matthew Ivory"
-    right:       
-      - text: "Previous Content"
-        href: Previous/index.html
 
 format:
   html:
