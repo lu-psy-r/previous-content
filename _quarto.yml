@@ -23,7 +23,7 @@ website:
   sidebar:
     style: "floating"
     search: true
-    collapse-level: 1
+    collapse-level: 2
     contents: 
       - section: "2023/2024"
         contents:
@@ -31,6 +31,11 @@ website:
             contents: 2324/PSYC121/*
           - section: PSYC122
             contents: 2324/PSYC122/*
+      - section: "PSYC402"
+        contents: 
+          - auto: 2324/PSYC402/part1/*
+          - auto: 2324/PSYC402/part2/*
+          
 
 
 
