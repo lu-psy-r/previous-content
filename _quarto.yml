@@ -31,10 +31,10 @@ website:
             contents: 2324/PSYC121/*
           - section: PSYC122
             contents: 2324/PSYC122/*
-      - section: "PSYC402"
-        contents: 
-          - auto: 2324/PSYC402/part1/*
-          - auto: 2324/PSYC402/part2/*
+          - section: "PSYC402"
+            contents: 
+            - auto: 2324/PSYC402/part1/*
+            - auto: 2324/PSYC402/part2/*
           
 
 
