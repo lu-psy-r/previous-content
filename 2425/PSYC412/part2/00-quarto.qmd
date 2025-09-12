@@ -1,0 +1,568 @@
+---
+title: Week 00. Writing reproducible reports using Quarto
+subtitle: Written by Rob Davies and Tom Beesley
+order: 18
+bibliography: references.bib
+csl: psychological-bulletin.csl
+---
+
+```{r}
+#| label: get-libraries
+#| echo: false
+#| message: false
+#| warning: false
+
+# get libraries
+library(apaTables)
+library(apaText)
+library(bayesplot)
+library(brms)
+library(broom.mixed)
+library(corrplot)
+library(dotwhisker)
+library(GGally)
+library(ggcorrplot)
+library(ggdist)
+library(ggExtra)
+library(grateful)
+library(gt)
+library(here)
+library(kableExtra)
+library(patchwork)
+library(psych)
+library(tidybayes)
+library(tidyverse)
+```
+
+```{r}
+#| warning: false
+#| echo: false
+study.one.gen <- read_csv("study-one-general-participants.csv")  
+study.two.gen <- read_csv("study-two-general-participants.csv")
+```
+
+# Writing reproducible reports using Quarto {#sec-quarto-overview}
+
+## What is this? {#sec-quarto-overview-what}
+
+I am sharing materials here to support the development of skills in producing reproducible reports using Quarto.
+
+These materials should provide a quick entry to the what, why and how.
+
+You can write in Quarto, in R-Studio (or any code editor), to produce:
+
+-   reports or manuscripts;
+-   presentations;
+-   books;
+-   webpages.
+
+Here, we are going to focus on reports that will be output as `.docx`.
+
+::: callout-tip
+What we are engaged in, here, is writing a combination of text and (here, R) code to generate a document.
+
+This idea is old --- see: e.g., Donald Knuth (who developed LaTex): <https://www-cs-faculty.stanford.edu/~knuth/lp.html>
+
+But Quarto is a modern, efficient, way to do a powerful thing easily and efficiently.
+:::
+
+### Related materials {#sec-quarto-overview-related}
+
+Quarto was developed by Posit (formerly: R-Studio).
+
+::: callout-tip
+You can find the Posit guide to Quarto here:
+
+<https://quarto.org/docs/get-started/hello/rstudio.html>
+:::
+
+### Pre-requisites {#sec-quarto-overview-pre-requisites}
+
+1.  Before you get started, you will need a local installation of R and R-Studio.
+
+-   Install R first, following the instructions here:
+
+<https://cran.r-project.org/>
+
+-   Then install RStudio, see:
+
+<https://posit.co/download/rstudio-desktop/>
+
+You need to do the installation in that order because R-Studio is the interface (an *Interactive Development Editor (IDE)*) but R does the work.
+
+2.  It is probably worth your time having a skim of the "hello world" quick start guide:
+
+<https://quarto.org/docs/get-started/hello/rstudio.html>
+
+## Motivations: why bother? {#sec-quarto-overview-why}
+
+There are at least the following justifications for investing time in this (in no particular order):
+
+1.  Reproducible manuscripts: create documents that incorporate text, computation or plotting code, and bibliographic information in one place. By doing so you avoid the risk of losing track of what data underlie which calculations or plots or table summaries. Copy and pasting statistical results will inevitably lead to errors.
+
+2.  Automate the boring stuff: figure, table or section cross-referencing; producing documents in different formats; generating bibliographies.
+
+3.  Make manuscripts or presentations or notes share-able: Quarto is free so removes barrier to entry presented by licensed software like MS Word.
+
+4.  Make nice things: plots and tables will look better.
+
+## Quick start {#sec-quarto-quick-start}
+
+Open R-Studio.
+
+Click on the menu buttons:
+
+1.  `File` $\rightarrow$ `New File` $\rightarrow$ `Quarto Document...`
+2.  A menu box will open: click on the `Word` radio button, and the `Create` button.
+
+![New Create Document menu box](file-create-document.png)
+
+If you do that, you will see this file open:
+
+![A new `.qmd` file](word-quarto.png)
+
+3.  See that `Render` button at the top of the window? Click on it.
+
+-   You will be asked to give the file a name. Name it.
+
+This action will create a Quarto script file, a `.qmd` and will generate a Word `.docx`.
+
+The whole script looks like this:
+
+![A new `.qmd` file: dummy file](dummy-qmd.png)
+
+And the `.docx` looks like this:
+
+![A new `.qmd` file: dummy file output](dummy-qmd-docx-output.png)
+
+### Basic anatomy
+
+This example shows you the main parts of a Quarto file. Let's identify these parts before we move on:
+
+1.  The `yaml` at the top is where you set document options:
+
+```         
+---
+title: "Untitled"
+format: docx
+editor: visual
+---
+```
+
+Usually, this will be where you specify what output formats you want, whether you want a ToC, and (for APA 7 documents) it will be where you add author, title and abstract information, see more information here:
+
+<https://quarto.org/docs/output-formats/ms-word.html>
+
+2.  You have section titles:
+
+```         
+## Quarto
+```
+
+Notice the `##` -- the more hash signs you add, the lower the section title in the section hierarchy.
+
+3.  You have plain text:
+
+```         
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+```
+
+4.  And you have computing code --- *chunks*:
+
+```{r}
+#| echo: fenced
+#| label: example
+1 + 1
+```
+
+The tick marks are at the top and bottom of the chunks tell R to read the code and work with it.
+
+Notice that you can specify the identity (for cross-referencing) and the behaviour or appearance of the code at the top of the chunk.
+
+## Let's write a report {#sec-quarto-report-first}
+
+In writing reports, we are often going to want to do tasks like:
+
+1.  Get sample data and show:
+
+-   Distributions or other preliminary information to characterize samples.
+
+2.  Fit a model.
+
+-   Present a table summary of the model estimates.
+-   Present a plot showing model predictions.
+
+3.  Cross-reference figures, tables and sections.
+
+We look at how to do these things next.
+
+### Our example data {#sec-example-data}
+
+We will be working with an example data-set: click on [the link](files/study-one-general-participants.csv) to download the example data file.
+
+-   `study-one-general-participants.csv`
+
+The file has the structure you can see in the extract below.
+
+```{r}
+#| label: headcheck-wide
+#| echo: false
+study.two.gen %>%
+  filter(participant_ID == c('studytwo.1', 'studytwo.10', 'studytwo.100', 'studytwo.101')) %>%
+  as.data.frame() %>%
+  kable() %>%
+  kable_styling()
+```
+
+You can use the *scroll bar* at the bottom of the data window to view different columns.
+
+You can see the columns:
+
+-   `participant_ID` participant code;
+-   `mean.acc` average accuracy of response to questions testing understanding of health guidance (varies between 0-1);
+-   `mean.self` average self-rated accuracy of understanding of health guidance (varies between 1-9);
+-   `study` variable coding for what study the data were collected in
+-   `AGE` age in years;
+-   `HLVA` health literacy test score (varies between 1-16);
+-   `SHIPLEY` vocabulary knowledge test score (varies between 0-40);
+-   `FACTOR3` reading strategy survey score (varies between 0-80);
+-   `GENDER` gender code;
+-   `EDUCATION` education level code;
+-   `ETHNICITY` ethnicity (Office National Statistics categories) code.
+
+#### Data read-in {#sec-example-data-read-in}
+
+Download and read the data into the R environment.
+
+```{r}
+#| label: data-read-in
+#| echo: fenced
+study.two.gen <- read_csv("study-one-general-participants.csv")
+```
+
+### My first histogram {#sec-example-histogram}
+
+Let's take a look at the distribution of ages in this sample.
+
+You can do that by examining a histogram, see @fig-example-histogram.
+
+You can embed the code that does that work, together with your text, in a chunk like this:
+
+```{r}
+#| label: fig-example-histogram
+#| echo: fenced
+study.two.gen %>%
+  ggplot(aes(x = AGE)) +
+  geom_histogram() +
+  labs(title = "Sample characteristics", x = "Age (years") +
+  theme_bw() 
+```
+
+### My first scatterplot: exerting a bit more control {#sec-example-scatterplot-control}
+
+In practice, unless you are teaching, or sharing your workings as part of your documentation, you are going to want to embed a chunk of code to produce a plot so that the plot is presented in your output document while the code chunk that does the work is invisible (at output).
+
+You may also want to add a figure caption and alt-text, and you will want to manipulate figure dimensions.
+
+We can learn how to do that stuff while producing a scatterplot, next.
+
+Let's do something a little fancy, as in @fig-ggextra-demo-eval: a scatterplot with marginal histograms.
+
+To produce the plot, you will need to have installed the `{ggExtra}` library.
+
+Let's go through the control elements first.
+
+Take a look at the chunk of code:
+
+```{r}
+#| label: fig-ggextra-demo-non-eval
+#| fig-cap: "Scatterplot showing the potential association between accuracy of comprehension and health literacy"
+#| fig-alt: "The figure presents a grid of scatterplots indicating the association between variables mean accuracy (on y-axis) and health literacy (x-axis) scores. The points are shown in black, and clustered such that higher health literacy scores tend to be associated with higher accuracy scores. The trend is indicated by a thick red line. Marginal histograms indicates the distributio of data on each variable."
+#| warning: false
+#| echo: fenced
+#| eval: false
+#| fig-width: 4.5
+#| fig-height: 4.5
+# -- note that can use gridExtra
+# -- to show marginal distributions in scatterplots
+# https://github.com/daattali/ggExtra
+plot <- study.two.gen %>%
+  ggplot(aes(x = HLVA, y = mean.acc)) +
+  geom_point(size = 1.75, alpha = .5) +
+  geom_smooth(size = 1.5, colour = "red", method = "lm", se = FALSE) +
+  xlim(0, 15) +
+  ylim(0, 1.1)+
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.5))
+  ) +
+  labs(x = 'Health literacy (HLVA)', y = 'Mean accuracy')
+ggExtra::ggMarginal(plot, type = "histogram", colour = "lightgrey", fill = "lightgrey")
+```
+
+Notice the bits of text at the top of the chunk:
+
+-   `#| label: fig-ggextra-demo-non-eval` labels the chunk. You need this for figure referencing.
+-   `#| fig-cap: "Scatterplot showing ..."` adds the caption that will be shown next to the plot.
+-   `#| fig-alt: "The figure presents ..."` adds alt-text describing the plot for people who use screen readers.
+-   `#| warning: false` stops R from producing the plot with warnings.
+-   `#| echo: false` stops R from showing both the code and the plot.
+-   `#| eval: false` here stops R from actually running the code.
+-   `#| fig-width: 4.5` adjusts figure width.
+-   `#| fig-height: 4.5` adjusts figure height.
+
+You can see that I have added comments: `# -- note that can use gridExtra` to make the chunk self-documenting.
+
+Now show the plot: @fig-ggextra-demo-eval.
+
+```{r}
+#| label: fig-ggextra-demo-eval
+#| fig-cap: "Scatterplot showing the potential association between accuracy of comprehension and health literacy"
+#| fig-alt: "The figure presents a grid of scatterplots indicating the association between variables mean accuracy (on y-axis) and health literacy (x-axis) scores. The points are shown in black, and clustered such that higher health literacy scores tend to be associated with higher accuracy scores. The trend is indicated by a thick red line. Marginal histograms indicates the distributio of data on each variable."
+#| warning: false
+#| echo: true
+#| eval: true
+#| fig-width: 4.5
+#| fig-height: 4.5
+# -- note that can use gridExtra
+# -- to show marginal distributions in scatterplots
+# https://github.com/daattali/ggExtra
+plot <- study.two.gen %>%
+  ggplot(aes(x = HLVA, y = mean.acc)) +
+  geom_point(size = 1.75, alpha = .5) +
+  geom_smooth(size = 1.5, colour = "red", method = "lm", se = FALSE) +
+  xlim(0, 15) +
+  ylim(0, 1.1)+
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.5))
+  ) +
+  labs(x = 'Health literacy (HLVA)', y = 'Mean accuracy')
+ggExtra::ggMarginal(plot, type = "histogram", colour = "lightgrey", fill = "lightgrey")
+```
+
+You can read more about chunk options here:
+
+<https://quarto.org/docs/computations/r.html#chunk-options>
+
+::: callout-tip
+Note that the figure reference is computed by Quarto:
+
+-   If the code chunk has a label like `#| label: fig-ggextra-demo-eval` (notice the grammar `fig-...`)
+-   and the text outside the chunk has the reference code `@fig-ggextra-demo-eval` then R will link the two objects, and write the reference in the rendered document.
+-   Figure reference numbers will be automated tallied by R.
+:::
+
+Read more about alt-text here:
+
+<https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/28-fig-alt/>
+
+### Inline computing {#sec-inline}
+
+It is a hard habit to break but you never have to calculate things and enter values by hand again e.g.
+
+-   What is the number of observations in the example data? It is: `r length(study.two.gen$participant_ID)`.
+
+This is the bit of code that does the calculation in the sentence:
+
+-   What is the number of observations in the example data? It is: `` r length(study.two.gen$participant_ID)` ``.
+
+For some statistical tests (t, cor, anovas, etc) there is a handy package and function, `apa::apa` that will render the statistical result in the correct apa format:
+
+For example, you can wrap the `apa()` function around this `cor.test()` command to get automatically formatted statistical reports.
+
+### My first model {#sec-example-model}
+
+Now let's fit a model and get some results.
+
+Let's assume we want to model the effect of health literacy on mean accuracy of understanding of health information.
+
+Let's say that our model assumes:
+
+$$
+y_i \sim \beta_0 + \beta_1X_1 + \epsilon_i
+$$
+
+where:
+
+1.  Outcome mean accuracy of response $y_i$ is expected to vary, on average
+2.  In relation to $\beta_0 + \beta_1X_1$
+
+where:
+
+$\beta_1X_1$ the coefficient of the effect of variation in health literacy.
+
+This is how you write math in Quarto (notice the dollar signs):
+
+-   `$y_i \sim \beta_0 + \beta_1X_1 + \epsilon_i$`
+
+::: callout-tip
+I'm not writing the math because this is a serious model but to show off the equation writing capacities of Quarto.
+
+<https://quarto.org/docs/visual-editor/technical.html>
+
+It is *much, much* more user friendly, and accurate, than MS Word equation builders.
+
+You can read more about writing equations in:
+
+<https://en.wikibooks.org/wiki/LaTeX/Mathematics#Operators>
+:::
+
+So fit the model and get a summary:
+
+```{r}
+model <- lm(mean.acc ~ HLVA, data = study.two.gen)
+summary(model)
+```
+
+Obviously, the summary is not formatted for presentation. We deal with that next.
+
+::: callout-tip
+We absolutely do not want to copy statistics from our model outputs because:
+
+-   we will make copy-paste errors;
+-   we will lose track of which model underlies the statistics;
+-   it is slow and boring.
+
+We want to get R to do the work for us.
+:::
+
+### My first model summary table {#sec-example-model-summary}
+
+There are a variety of ways to produce tables.
+
+@tbl-model-summary illustrates one method.
+
+```{r}
+#| label: tbl-model-summary
+#| echo: true
+#| message: false
+#| warning: false
+#| cache: true
+#| tbl-cap: "Table summary of model"
+# -- tidy model information
+model.tidy <- tidy(model) %>%
+  filter(term != "(Intercept)") %>%
+  mutate(term = as.factor(term)) %>%
+  mutate(term = fct_recode(term,
+
+    "Health literacy (HLVA)" = "HLVA",
+    
+  )) %>%
+  rename(
+    "Predictor" = "term",
+    "Estimate" = "estimate",
+    "Standard error" = "std.error",
+    "t" = "statistic"
+  )
+
+# -- present table of model information
+kable(model.tidy, digits = 4) %>%
+  kable_styling(bootstrap_options = "striped")
+
+```
+
+::: callout-warning
+I can probably fix the p-value presentation but I'll leave that there for now. The general principle is what counts:
+
+-   You can programmatically fit a model $\rightarrow$ get the statistics $\rightarrow$ produce a table.
+:::
+
+But see also:
+
+-   <https://vincentarelbundock.github.io/tinytable/#tutorial>
+-   <https://modelsummary.com/index.html>
+-   <https://www.danieldsjoberg.com/gtsummary/>
+-   <https://broom.tidymodels.org/articles/broom.html>
+
+There is, however, a persuasive argument that model information (estimates, etc.) is best communicated visually, see the discussion in [e.g., @kastellec2007]
+
+<https://www.cambridge.org/core/journals/perspectives-on-politics/article/abs/using-graphs-instead-of-tables-in-political-science/9FD63E9EE686AF046732191EE8A68034>
+
+### My first marginal effects plot {#sec-example-model-marginal-effects}
+
+I prefer to general marginal or conditional effects plots, see:
+
+<https://marginaleffects.com/>
+
+## APA formatted manuscripts
+
+As you generate a full manuscript you'll begin to wish there was an easy way to make it compatible with APA format, enabling easy submission to a journal. Thankfully there is a wonderful "extension" for doing just that: <https://wjschne.github.io/apaquarto/>. As the creator of this extension notes, "I wrote apaquarto so that I would never have to worry about APA style ever again.". It is easy to intall and works well, plus the creator is extremely responsive to requests and bug reports on github.
+
+Detailed instructions for installing and using the extension are given on the main github page:
+
+<https://github.com/wjschne/apaquarto>
+
+You can either convert an old article or you can create a new one using the extension.
+
+See here for a list of the options you can control in this extension: <https://wjschne.github.io/apaquarto/options.html>
+
+## Adding references
+
+Adding references to a quarto document is easy. In the visual editor you can click Insert -\> Citation. You can also just type "\@" which will bring up a list of references contained in any ".bib" file you have in the current folder. **bib** files are common methods for storing bibliographic information about publications. You can export references in bib format from common referencing management systems such as Endnote, Mendeley, Zotero etc.
+
+Once you have an exported bib file in your working directory, the citations will appear when you type "\@". Each item in the bib file has a "key", which is typically the first author name, followed by a year. If you want the reference to appear in parentheses in your generated document, put the key in square parentheses in your document. Separate multiple references in the usual way with a semicolon.
+
+Even more useful is if you link RStudio to a reference manager. [Zotero](https://www.zotero.org/) is a popular and open source reference manager and plays well with quarto manuscripts. If you have Zotero installed, then the latest version of RStudio will detect it and import the library. This saves you creating the bib file, as RStudio will automatically add any references you type into a new bib file.
+
+References are then assembled in apa format in a final reference list at the end of the document.
+
+More info on this process here: <https://posit.co/blog/rstudio-1-4-preview-citations/>
+
+## TODO list
+
+-   cross-referencing
+-   bibliographies
+-   inline computing
+-   format to multiple outputs
+
+### APA formatted manuscripts {#sec-apa}
+
+There a bunch of resources to get APA formatted manuscripts:
+
+<https://github.com/wjschne/apaquarto>
+
+<https://wjschne.github.io/apaquarto/writing.html>
+
+### Cross-referencing
+
+You can cross-reference:
+
+-   figures
+-   tables
+-   equations
+-   sections
+-   footnotes
+
+In output documents, the cross references appear as numbered hyperlinks, which is nice
+
+From the writer's perspective, the main benefit is that you no longer have to try to keep track of object numbering. If you make an edit, the tallying will change automatically, e.g., remove or move a figure, and all the figure reference numbers will be re-calculated automatically.
+
+### Bibliographies {#sec-bibliographies}
+
+It's easy to do citations and build bibliographies:
+
+<https://quarto.org/docs/visual-editor/technical.html#citations>
+
+And you can have the references styled using any style with a `.csl` (Citation Style Language):
+
+<https://www.zotero.org/styles?q=psychological%20bulletin>
+
+::: callout-tip
+For people contributing to this tutorial, this:
+
+<https://bookdown.org/yihui/rmarkdown-cookbook/verbatim-code-chunks.html>
+
+is handy.
+:::
+
+### Format to multiple outputs {#sec-format-multiple}
+
+You can generate webpages, books, .pdf or .docx outputs from Quarto source files.
+
+## References
+
+::: {#refs}
+:::

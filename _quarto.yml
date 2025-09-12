@@ -36,6 +36,20 @@ website:
             contents: 
               - auto: 2324/PSYC402/part1/*
               - auto: 2324/PSYC402/part2/*
+      - section: "2024/2025"
+        contents:
+          - section: PSYC121
+            contents: 2425/PSYC121/*
+          - section: PSYC122
+            contents: 2425/PSYC122/*
+          - section: PSYC214
+            contents: 2425/PSYC214/*
+          - section: PSYC234
+            contents: 2425/PSYC234/*
+          - section: PSYC411
+            contents: 2425/PSYC411/*
+          - section: PSYC412
+            contents: 2425/PSYC412/*
           
 
 
