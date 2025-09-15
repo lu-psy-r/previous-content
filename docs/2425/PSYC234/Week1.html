@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>1. Review of correlation, simple regression and demonstration of multiple regression – Archive: Statistics for Psychologists</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../2425/PSYC234/Week2.html" rel="next">
+<link href="../../2425/PSYC234/index.html" rel="prev">
+<link href="../../Images/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-81f0983bf4b06e75e440f5f7bd87a0ae.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script language="JavaScript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script>window.onload = function() {document.getElementById("autocomplete-0-input").placeholder = "Search the Archive";};</script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="https://lu-psy-r.github.io/">
+    <span class="navbar-title">Archive: Statistics for Psychologists</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://lu-psy-r.github.io"> 
+<span class="menu-text">Back to the Current Materials</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../2425/PSYC121/index.html">2024/2025</a></li><li class="breadcrumb-item"><a href="../../2425/PSYC234/index.html">PSYC234</a></li><li class="breadcrumb-item"><a href="../../2425/PSYC234/Week1.html">1. Review of correlation, simple regression and demonstration of multiple regression</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">2023/2024</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../2324/psyc121/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PSYC121</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/psyc121/Week1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistics for Psychologists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/psyc121/Week2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Descriptive statistics in RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/psyc121/Week3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. DVs and IVs in RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/psyc121/Week4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Customisation of graphs, and z-scores</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/psyc121/Week5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Class test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/psyc121/Week6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Sampling, probability and binomial tests</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/psyc121/Week7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Filtering data and testing means (one-sample t-test)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/psyc121/Week8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Related-samples t-tests, plotting means and SE bars</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/psyc121/Week9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Unrelated-samples t-test and Power</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../2324/psyc122/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PSYC122</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/psyc122/Week11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Week 11 - Correlation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/psyc122/Week12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Week 12 - Correlation Part 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/psyc122/Week13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Week 13 - The Linear Model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/psyc122/Week14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Week 14 - Chi-Square</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/psyc122/Week16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Week 16 – Hypotheses, associations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/psyc122/Week17.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Week 17 – Better understanding the linear model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/psyc122/Week18.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Week 18 – Developing the linear model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/psyc122/Week19.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Week 19 – Linear models – critical perspectives</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">PSYC402</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/PSYC402/part1/Week11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Recap of the linear model and practising data-wrangling in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/PSYC402/part1/Week12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Categorical predictors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/PSYC402/part1/Week13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. More on interactions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/PSYC402/part1/Week14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Logistic regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/PSYC402/part1/Week15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Poisson regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/PSYC402/part2/01-multilevel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to multilevel data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/PSYC402/part2/02-mixed.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to linear mixed-effects models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/PSYC402/part2/03-mixed.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Developing linear mixed-effects models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/PSYC402/part2/04-glmm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Generalized Linear Mixed-effects Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/PSYC402/part2/05-ordinal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Ordinal Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/PSYC402/part2/how.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/PSYC402/part2/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction: the why</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/PSYC402/part2/knowledge-ecosystem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R knowledge</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/PSYC402/part2/LICENSE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LICENSE</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/PSYC402/part2/references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/PSYC402/part2/summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Summary</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/PSYC402/part2/visualization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data visualization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2324/PSYC402/part2/what.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">What</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">2024/2025</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../2425/PSYC121/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PSYC121</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC121/Week1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistics for Psychologists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC121/Week2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Descriptive statistics in RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC121/Week3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. DVs and IVs in RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC121/Week4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Customisation of graphs, and z-scores</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC121/Week5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Class test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC121/Week6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Sampling, probability and binomial tests</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC121/Week7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Filtering data and testing means (one-sample t-test)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC121/Week8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Related-samples t-tests, plotting means and SE bars</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC121/Week9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Unrelated-samples t-test and Power</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../2425/PSYC122/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PSYC122</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC122/Week11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Week 11 - Correlation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC122/Week12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Week 12 - Correlation Part 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC122/Week13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Week 13 - The Linear Model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC122/Week14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Week 14 - Chi-Square</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC122/Week16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Week 16 – Hypotheses, associations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC122/Week17.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Week 17 – Better understanding the linear model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC122/Week18.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Week 18 – Developing the linear model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC122/Week19.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Week 19 – Linear models – critical perspectives</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../2425/PSYC214/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PSYC214</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC214/Week1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistics for Psychologists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC214/Week2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistics for Psychologists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC214/Week3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistics for Psychologists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC214/Week4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistics for Psychologists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC214/Week5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistics for Psychologists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC214/Week6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistics for Psychologists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC214/Week7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistics for Psychologists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC214/Week8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistics for Psychologists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC214/Week9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistics for Psychologists</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../2425/PSYC234/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PSYC234</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC234/Week1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">1. Review of correlation, simple regression and demonstration of multiple regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC234/Week2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Multiple Regression Including Categorical Predictors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC234/Week3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Multiple Regression Models that Include Interactions (Moderated Variables)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC234/Week4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Mediation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC234/Week5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Factor Analysis and the Binomial Test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC234/Week6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Wilcoxon rank-sum test and Wilcoxon signed-rank test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC234/Week7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Kruskal-Wallis test and Friedman’s ANOVA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC234/Week8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Binary logistic regression models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC234/Week9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Expanding on binary logistic regression</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">PSYC411</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC411/part1/Week1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1. Introducing Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC411/part1/Week2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2. Manipulating data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC411/part1/Week3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3. Drawing graphs from data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC411/part1/Week4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 4. Testing nominal data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC411/part1/Week5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 5. Testing differences between groups</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC411/part2/report-preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 6. The structured research report – Quick start</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC411/part2/how.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 6. How you can do the analysis work</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC411/part2/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 6. Why we are asking you to do this</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC411/part2/hypotheses-associations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 7. Hypotheses and associations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC411/part2/lm-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 8. Introduction to the linear model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC411/part2/visualization-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 9. Data visualization practices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC411/part2/lm-dev.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 10. Developing the linear model</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">PSYC412</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC412/part1/Week11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 11. Recap of the linear model and practising data-wrangling in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC412/part1/Week12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 12. Categorical predictors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC412/part1/Week13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 13. More on interactions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC412/part1/Week14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 14. Logistic regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC412/part1/Week15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 15. Poisson regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC412/part2/01-multilevel-workbook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 16. Workbook introduction to multilevel data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC412/part2/01-multilevel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 16. Conceptual introduction to multilevel data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC412/part2/02-mixed-workbook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 17. Workbook introduction to mixed-effects models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC412/part2/02-mixed.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 17. Conceptual introduction to mixed-effects models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC412/part2/03-mixed-workbook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 18. Developing linear mixed-effects models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC412/part2/03-mixed.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 18. Conceptual introduction to developing linear mixed-effects models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC412/part2/04-glmm-workbook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 19. Workbook introduction to Generalized Linear Mixed-effects Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC412/part2/04-glmm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 19. Conceptual introduction to Generalized Linear Mixed-effects Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC412/part2/05-ordinal-workbook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 20. Workbook introduction to Ordinal (Mixed-effects) Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC412/part2/05-ordinal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 20. Conceptual introduction to Ordinal (Mixed-effects) Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC412/part2/report-preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 00. The structured research report – Requirements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC412/part2/00-quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 00. Writing reproducible reports using Quarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../2425/PSYC412/part2/LICENSE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LICENSE</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#lecture" id="toc-lecture" class="nav-link active" data-scroll-target="#lecture">Lecture</a>
+  <ul class="collapse">
+  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials">Materials</a></li>
+  <li><a href="#pre-lab-activity" id="toc-pre-lab-activity" class="nav-link" data-scroll-target="#pre-lab-activity">Pre-Lab Activity</a></li>
+  <li><a href="#recommended-reading" id="toc-recommended-reading" class="nav-link" data-scroll-target="#recommended-reading">Recommended Reading</a></li>
+  <li><a href="#test-yourself" id="toc-test-yourself" class="nav-link" data-scroll-target="#test-yourself">Test Yourself!</a></li>
+  </ul></li>
+  <li><a href="#overview-of-learning-model-in-234" id="toc-overview-of-learning-model-in-234" class="nav-link" data-scroll-target="#overview-of-learning-model-in-234">Overview of Learning Model in 234</a>
+  <ul class="collapse">
+  <li><a href="#what-happens" id="toc-what-happens" class="nav-link" data-scroll-target="#what-happens">What happens?</a></li>
+  <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis">Data Analysis</a></li>
+  <li><a href="#reporting-a-linear-regression-analysis" id="toc-reporting-a-linear-regression-analysis" class="nav-link" data-scroll-target="#reporting-a-linear-regression-analysis">Reporting a Linear Regression Analysis</a>
+  <ul class="collapse">
+  <li><a href="#communicating-findings-from-linear-regression-models" id="toc-communicating-findings-from-linear-regression-models" class="nav-link" data-scroll-target="#communicating-findings-from-linear-regression-models">Communicating Findings from Linear Regression Models</a></li>
+  </ul></li>
+  <li><a href="#staff-role-in-labs" id="toc-staff-role-in-labs" class="nav-link" data-scroll-target="#staff-role-in-labs">Staff role in labs</a></li>
+  </ul></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../2425/PSYC121/index.html">2024/2025</a></li><li class="breadcrumb-item"><a href="../../2425/PSYC234/index.html">PSYC234</a></li><li class="breadcrumb-item"><a href="../../2425/PSYC234/Week1.html">1. Review of correlation, simple regression and demonstration of multiple regression</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">1. Review of correlation, simple regression and demonstration of multiple regression</h1>
+<p class="subtitle lead">Emma Mills</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="lecture" class="level1">
+<h1>Lecture</h1>
+<p>The lecture for week 11 is <a href="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=72b44e8c-e901-4f4c-baa7-b25f01282d16">here</a>. Please note, it is best to view the video using the screen viewer. That way you see the moving cursor and when I move to the RStudio demonstration at around 37 minutes, you will see everything. If you have the slide viewer selected, then around 37 minutes, you will need to move to the screen view so that you can see the RStudio demonstration.</p>
+<section id="materials" class="level2">
+<h2 class="anchored" data-anchor-id="materials">Materials</h2>
+<p>The lecture materials and slides, including pre-lab markdown files for review, and data and R files for the week 11 lab are downloaded from <a href="data/Wk1/PSYC234_Week_11.zip">here</a> as a zip file. You can upload the zip file directly on to the R server and it will populate a new folder with the files and data files automatically.</p>
+</section>
+<section id="pre-lab-activity" class="level2">
+<h2 class="anchored" data-anchor-id="pre-lab-activity">Pre-Lab Activity</h2>
+<ol type="1">
+<li><p>Please download the Week 11 materials (link above) and upload all of the .Rmd files and data files to your R account in preparation for the lab.</p></li>
+<li><p>Please run through the three .Rmd files listed below by yourself. These all depend on the Covariance.csv data file</p></li>
+</ol>
+<ul>
+<li>Correlation Review</li>
+<li>Simple Regression Review</li>
+<li>Multiple Regression Review</li>
+</ul>
+<ol start="3" type="1">
+<li>Look at the Planning ANY Data Analysis 2025 powerpoint which is related to the lab in Week 11.</li>
+</ol>
+</section>
+<section id="recommended-reading" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-reading">Recommended Reading</h2>
+<p>Chapters 9, 10 and 11 from Howell, D. C. (2017). Fundamental statistics for the behavioral sciences (Ninth edition.). Cengage. There are online versions available from the library <a href="https://onesearch.lancaster-university.uk/permalink/44LAN_INST/a1plrn/alma9930907993701221">at this link</a></p>
+</section>
+<section id="test-yourself" class="level2">
+<h2 class="anchored" data-anchor-id="test-yourself">Test Yourself!</h2>
+<p>The link to this week’s multiple choice quiz is <a href="https://modules.lancaster.ac.uk/mod/quiz/view.php?id=2506928">here</a></p>
+</section>
+</section>
+<section id="overview-of-learning-model-in-234" class="level1">
+<h1>Overview of Learning Model in 234</h1>
+<section id="what-happens" class="level2">
+<h2 class="anchored" data-anchor-id="what-happens">What happens?</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+You asked; We did
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Through the staff student committee, feedback from PSYC 214 was for less cut and paste activities. Script generation in 234 <em>is</em> less cut and paste, however cutting and pasting snippets of code that do the right job is still highly recommended</p>
+</div>
+</div>
+<ol type="1">
+<li><p>Before the lab</p>
+<ul>
+<li><p>watch the weekly lecture</p>
+<ul>
+<li>Seriously, there is no point coming to the lab if you haven’t watched the lecture.</li>
+</ul></li>
+</ul></li>
+<li><p>In each lab</p></li>
+</ol>
+<ul>
+<li>You will be given a dataset and model summary
+<ul>
+<li>Each week’s model summary will include practice of the new parts of learning featured in the week’s lecture</li>
+</ul></li>
+<li>In small groups, write the script that produced the model output
+<ul>
+<li>Give your group a unique name</li>
+<li>One member of the group make an R project
+<ul>
+<li>Invite other group members</li>
+</ul></li>
+<li>Alternatively, one member take responsibility for typing and work in one script with other members contributing. You can connect one computer to the big screen at the table in the Levy lab, and work together by looking at that script while finding code that works on personal laptops.</li>
+<li>Use the analysis workflow diagram and process (see below)
+<ul>
+<li>Talk together about the model summary first</li>
+<li>Look at which variables have been used in the model</li>
+<li>Use the codebook to understand what each variable represents</li>
+<li>Create some possible hypotheses that the model seeks to explain</li>
+<li>Interpret the model summary</li>
+</ul></li>
+<li>Collaborate in writing the script
+<ul>
+<li>Each person could work on a different step of the workflow while everyone helps debug / advise / review / find excerpts of code</li>
+<li>Or you could work together to decide what is needed</li>
+<li>You can scrape code from all your statistics modules and the web
+<ul>
+<li>The internet</li>
+<li>R books</li>
+</ul></li>
+</ul></li>
+<li>Refer to the demonstration script from the lecture</li>
+<li>Use the lab time and staff to check your plan / process</li>
+</ul></li>
+</ul>
+<ol start="3" type="1">
+<li>Independent study time:</li>
+</ol>
+<ul>
+<li>Continue to work on the script in the shared project space.</li>
+</ul>
+<ol start="4" type="1">
+<li>Submit for feedback</li>
+</ol>
+<ul>
+<li>Save your script as UniqueGroupName_LabWeekNumber.R</li>
+<li>Submit to e.mills@lancaster.ac.uk
+<ul>
+<li>remember to attach your script</li>
+<li>remember to tell me the name of your group members</li>
+</ul></li>
+<li>A random sample of 3 scripts per lab will get feedback via module moodle
+<ul>
+<li>No credit here – learning process as preparation for your own project!</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why are we working like this?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Though not assessed group work, you are a massive peer-community and can support each other in your analysis planning and execution both now and in your final year. Learning from each other now, without any burden of assessment for the group work may help you see that there is more than one way to achieve an analysis output. It may also encourage knowledge exchange through people clarifying points about which they are unsure in their own peer group and with staff support.</p>
+</div>
+</div>
+</section>
+<section id="data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="data-analysis">Data Analysis</h2>
+<p>Any good data analysis requires the following steps:</p>
+<ul>
+<li><p><em>Importing</em> the data</p></li>
+<li><p><em>Tidying</em> or cleaning the data</p></li>
+<li><p>Performing any necessary <em>transformations</em></p></li>
+<li><p><em>Visualising</em> the data</p></li>
+<li><p><em>Modelling</em> the data</p></li>
+<li><p><em>Communicating</em> the findings from the data</p></li>
+</ul>
+<p>These steps may be familiar to you and are represented in the diagram below:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/Wk1 /Wrangle.png" class="img-fluid figure-img"></p>
+<figcaption>Steps in any data analysis plan</figcaption>
+</figure>
+</div>
+<p>You may remember the diagram itself from PSYC 122 and PSYC 214. Each step of the plan requires its own mini block of code that you will need to include in your scripts.</p>
+<p>Also, multiple regression, the focus model of PSYC 234, uses data that has many variables - hence the label ‘multiple’ - and the analysis that we may need to complete may be quite complex.</p>
+<p>Because the data has many variables, using raw data may mean that the first model we execute makes no sense and is hard to interpret. If a model is hard to interpret is it going to be even harder to communicate to a naive audience. For this reason, we will learn about some very useful transformations over the next few weeks. For one analysis, we may go around the Visualise-Transform-Model part of the diagram more than once before we have a model that we can interpret and communicate.</p>
+<p>Critically, performing these transformations <em>does not</em> change the information that is in the data and the relationships that exist between all the variables in the raw data. The change that we see through using these transformations is only in the final expression of the model. The transformations will assist in making a model that makes more sense with what we observe in everyday life. I will point this out as we see examples of this over the next few weeks.</p>
+</section>
+<section id="reporting-a-linear-regression-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="reporting-a-linear-regression-analysis">Reporting a Linear Regression Analysis</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/Wk1 /WrangleUpdate2.png" class="img-fluid figure-img"></p>
+<figcaption>To communicate, we need plots and text</figcaption>
+</figure>
+</div>
+<p>Additionally, the communication step of the workflow requires us to visualise the findings by way of producing effects plots, tables and model summaries along with text to report our results and help other people understand our findings.</p>
+<p>Model plots and model summaries are generated from our statistical analyses and look similar to the example below:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/Wk1 /PlotSummary.png" class="img-fluid figure-img"></p>
+<figcaption>An image of a multiple regression model summary</figcaption>
+</figure>
+</div>
+<p>The image is an example of an effects plot (left) and model summary output (right). We, as communicators, need to tidy these up so that they are presentable. We do this and include them, with text, in the results sections of reports.</p>
+<p>But what does the raw output contain? How do we use the information to understand what the data tells us?</p>
+<p>The raw model output is made up of four sections. From top to bottom, these are:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/Wk1 /Summary4Sections.png" class="img-fluid figure-img"></p>
+<figcaption>Four Sections of Model Output</figcaption>
+</figure>
+</div>
+<ol type="1">
+<li><p>Call = the model formula. This is the line of code that represents the dependent and independent variables upon which the model is built</p></li>
+<li><p>Residuals = the unexplained variance that is left over when the variance that is explained by the independent variables has been partialled out.</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Normal Distribution of Residuals
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To do an eye-test of whether your model has not violated the assumption of normality, look at the <code>Min</code>, <code>Max</code> and the <code>Median</code> values in the Residuals section. Are the <code>Min</code> and <code>Max</code> values roughly the same numbers - but the <code>Min</code> has a minus sign? Is the <code>Median</code> value at zero or close to zero? If they are, then your model errors are probably normally distributed - which is good! And you can further verify with a test!</p>
+</div>
+</div>
+<ol start="3" type="1">
+<li><p>Coefficients = your results for each of the independent variables or predictors. Each row is for one predictor. Each column on each row is needed when you report a result for an individual predictor (see below for more detail).</p></li>
+<li><p>Model Values (purple or bottom section) = these are statistics for the whole model. From this section, you want to report the <em>F</em> statistic, the <em>p</em> value and the Adjusted <em>R</em><sup>2</sup> (see below for more detail).</p></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Remember: the two <em>R</em><sup>2</sup> values in the model summary are reported as proportions. They need to be multiplied by 100 and reported as a percentage in your results section.</p>
+</div>
+</div>
+<section id="communicating-findings-from-linear-regression-models" class="level3">
+<h3 class="anchored" data-anchor-id="communicating-findings-from-linear-regression-models">Communicating Findings from Linear Regression Models</h3>
+<p>Any reporting of a linear regression model comes in two parts:</p>
+<ol type="1">
+<li><p>First we report the type of model, the model variables - outcomes &amp; predictors (DVs and IVs in ANOVA langauge) and model statistics,</p></li>
+<li><p>and then we report statistics for the individual coefficients from our hypotheses.</p></li>
+</ol>
+<p>As an example, we can use the model summary from above.</p>
+<section id="reporting-the-model" class="level4">
+<h4 class="anchored" data-anchor-id="reporting-the-model">Reporting the model</h4>
+<p>The information for the the first part of reporting the model is located at the top of the output, in the <code>Call</code> section, and the bottom of the output, in the <code>Model Values</code> section:</p>
+<p>Example text for reporting model significance:</p>
+<p>We conducted a multiple linear regression with children’s test scores as the outcome variable and mothers’ graduation status, age and intelligence scores as predictor variables. The model was significant (<em>F</em> (3, 430) = 39.25, <em>p</em> &lt; .001) and explained 21% of the variance in children’s test scores.</p>
+</section>
+<section id="reporting-an-individual-coefficient-for-an-individual-predictor" class="level4">
+<h4 class="anchored" data-anchor-id="reporting-an-individual-coefficient-for-an-individual-predictor">Reporting an individual coefficient for an individual predictor</h4>
+<p>The information for the second part of reporting the model comes from the <code>Coefficients</code> section. Reporting the regression coefficient for an individual predictor <em>that is statistically significant</em> also happens in two parts:</p>
+<ol type="a">
+<li><p>Reporting the statistic (estimate and SE) and the significance (<em>p</em> value)</p></li>
+<li><p>Reporting a verbal description of the effect</p></li>
+</ol>
+<p>When a coefficient for a predictor was part of one of your hypotheses but is non-signficant in the model, then you only report part a. You do not report a verbal description of the effect.</p>
+<p>The <code>c_mom_hs</code> is the coefficient label for the predictor that reflects a significant effect for whether a child’s mother completed high school or not. An example excerpt of text to report the finding for this predictor variable could be:</p>
+<p>part a = Whether or not the mother graduated high school has a significant impact upon a child’s test score (<em>b</em> = 5.65, SE = 2.26, <em>p</em> = .013).</p>
+<p>part b = Holding all other predictors constant, the difference in scores for a child whose mother finished high school and a child whose mother did not finish high school is 5.65 test points.</p>
+<p>The <code>c_mom_age</code> is the coefficient label for the predictor that reflects a non-significant effect for the age of the mother at the time that the child takes the test. An example excerpt of text to report the finding for this predictor variable could be:</p>
+<p>part a = The mother’s age at the time that the child took the test does not have a significant impact on a child’s test score (<em>b</em> = 0.22, SE = 0.33, <em>p</em> = .500).</p>
+<p>There is no part b because the effect is non-significant.</p>
+<p>Obviously, for the results section, these three excerpts are presented presented as a coherent body of text:</p>
+<p>We conducted a multiple linear regression with children’s test scores as the outcome variable and mothers’ graduation status, age and intelligence scores as predictor variables. The model was significant (<em>F</em> (3, 430) = 39.25, <em>p</em> &lt; .001) and explained 21% of the variance in children’s test scores.</p>
+<p>Whether or not the mother graduated high school has a significant impact upon a child’s test score (<em>b</em> = 5.65, SE = 2.26, <em>p</em> = .013). Holding all other predictors constant, the difference in scores for a child whose mother finished high school and a child whose mother did not finish high school is 5.65 test points. The mother’s age at the time that the child took the test does not have a significant impact on a child’s test score (<em>b</em> = 0.22, SE = 0.33, <em>p</em> = .500).</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+APA 7 Formatting Demands Different Numbers of Decimal Places
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Remember that values for means, SDs, coefficients and SEs, and <em>p</em> values all need to be reported to differing numbers of decimal places and rounded up!</p>
+</div>
+</div>
+<p>Use this model for reporting predictor effects across the next few weeks.</p>
+</section>
+</section>
+</section>
+<section id="staff-role-in-labs" class="level2">
+<h2 class="anchored" data-anchor-id="staff-role-in-labs">Staff role in labs</h2>
+<p>There will be two staff available during lab sessions. We will rotate around the room. You can raise your hand at any point to ask questions or get us to check your process as you go along.</p>
+<p>In response, you can expect staff to:</p>
+<ul>
+<li>Tell you that there is an error somewhere with an indication of where to look more closely</li>
+<li>Give you hints</li>
+<li>Extend your thinking if you are working at your best level already….</li>
+</ul>
+<p>We won’t give you the answers straight away. This is to encourage self-reliance and independence. Plus, there may be more than one correct answer to some of the questions.</p>
+<p>Please don’t expect us to spend a lot of time with you if you have not watched the lecture beforehand.</p>
+</section>
+</section>
+<section id="section" class="level1">
+<h1></h1>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../2425/PSYC234/index.html" class="pagination-link" aria-label="PSYC234">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">PSYC234</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../2425/PSYC234/Week2.html" class="pagination-link" aria-label="2. Multiple Regression Including Categorical Predictors">
+        <span class="nav-page-text">2. Multiple Regression Including Categorical Predictors</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Website developed by Matthew Ivory</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

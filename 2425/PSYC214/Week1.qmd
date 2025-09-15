@@ -1,10 +1,12 @@
 ---
 title: 1. Measurement, Variance and Inferential Statistics
-subtitle: "Sam Russell, Mark Hurlstone"
+subtitle: Sam Russell, Mark Hurlstone
 order: 2
 ---
 
+
 # Lecture
+
 <!--
 Watch Part 1 [here](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4497bcd1-8a1b-45c5-9e3b-b20200bb11c3)
 

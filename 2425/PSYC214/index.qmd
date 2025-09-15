@@ -1,12 +1,7 @@
 ---
 title: Statistics for Group Comparisons
 email-obfuscation: javascript
-order: 1
 
-#listing:
-#  id: links
-#  template: ../links.ejs
-#  contents: guide.yml
 ---
 
 # Welcome to PSYC214: Statistics for group comparisons

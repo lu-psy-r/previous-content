@@ -29,9 +29,9 @@ website:
       - section: "2023/2024"
         contents:
           - section: PSYC121
-            contents: 2324/PSYC121/*
+            contents: 2324/psyc121/*
           - section: PSYC122
-            contents: 2324/PSYC122/*
+            contents: 2324/psyc122/*
           - section: PSYC402
             contents: 
               - auto: 2324/PSYC402/part1/*
@@ -47,10 +47,13 @@ website:
           - section: PSYC234
             contents: 2425/PSYC234/*
           - section: PSYC411
-            contents: 2425/PSYC411/*
+            contents: 
+              - auto: 2425/PSYC411/part1/*
+              - auto: 2425/PSYC411/part2/*
           - section: PSYC412
-            contents: 2425/PSYC412/*
-          
+            contents: 
+              - auto: 2425/PSYC412/part1/*
+              - auto: 2425/PSYC412/part2/*
 
 
 

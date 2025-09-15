@@ -4,7 +4,6 @@ subtitle: Written by John Towse & Tom Beesley (2024)
 order: 2
 ---
 
-
 # 1. Lectures for week 1
 
 Watch the introduction: Lecture Part 1
