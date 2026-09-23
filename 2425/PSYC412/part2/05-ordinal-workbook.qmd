@@ -817,7 +817,7 @@ summary(health.clmm)
 
 2. Get predictions about outcome variation, given the model
 
-```{r}
+```{r eval=FALSE}
 dat <- ggpredict(health.clmm, terms="z_FACTOR3 [all]")
 ```
 
@@ -827,7 +827,7 @@ dat <- ggpredict(health.clmm, terms="z_FACTOR3 [all]")
 
 3. Show those predictions in a plot
 
-```{r}
+```{r eval=FALSE}
 plot(dat)
 ```
 :::
@@ -838,7 +838,7 @@ plot(dat)
 
 :::{.callout-tip collapse="true"}
 ## Code
-```{r}
+```{r eval=FALSE}
 #| label: fig-rating-clmm-factor3-predictions
 #| fig-cap: "A grid of plots showing marginal or conditional predicted probabilities that a rating response will have one value (among the 1-9 rating values possible), indicating how these predicted probabilities vary given variation in values of the standardized reading strategy (FACTOR3) variable."
 #| fig-alt: "The figure presents a grid of plots showing marginal or conditional -- adjusted prediction values -- predicted ratings and how they vary given variation in values of the standardized reading strategy (FACTOR3) variable. We can see flat lines for plots corresponding to predictions concerning response options 1-4, suggesting little probability that a rating response will take one of these values. We see norml curves for plots corresponding to predictions concerning response options 5-9, suggesting how the probability that a response will take one of these values may rise and then fall, depending on the FACTOR3 score a person has. The plots suggest that for higher FACTOR3 scores the probability increases that a rating response will have a higher value."

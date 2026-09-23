@@ -130,8 +130,8 @@ results$expected
 Cramer's V
 ```{r}
 eff_size <- cramersV(x = intent_recode$condition,     # the first grouping variable
-                     y = intent_recode$actualdonate,  # the second grouping variable
-                     correct = FALSE)                  # whether we want to apply the continuity correction (use if any of the expected cell frequencies < 10 in 2 x 2 table)
+                     y = intent_recode$actualdonate  # the second grouping variable
+                     )                  # whether we want to apply the continuity correction (use if any of the expected cell frequencies < 10 in 2 x 2 table)
 eff_size
 ```
 

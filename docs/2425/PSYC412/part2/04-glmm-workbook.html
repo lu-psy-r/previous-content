@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -84,18 +84,16 @@ div.csl-indent {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../2425/PSYC412/part2/04-glmm.html" rel="next">
-<link href="../../../2425/PSYC412/part2/03-mixed.html" rel="prev">
 <link href="../../../Images/favicon.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-81f0983bf4b06e75e440f5f7bd87a0ae.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -129,7 +127,7 @@ div.csl-indent {
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -156,756 +154,10 @@ div.csl-indent {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2425/PSYC121/index.html">2024/2025</a></li><li class="breadcrumb-item"><a href="../../../2425/PSYC412/part1/Week11.html">PSYC412</a></li><li class="breadcrumb-item"><a href="../../../2425/PSYC412/part2/04-glmm-workbook.html">Week 19. Workbook introduction to Generalized Linear Mixed-effects Models</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">2023/2024</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../2324/PSYC121/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">PSYC121</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC121/Week1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC121/Week2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Descriptive statistics in RStudio</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC121/Week3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. DVs and IVs in RStudio</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC121/Week4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Customisation of graphs, and z-scores</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC121/Week5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Class test</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC121/Week6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6. Sampling, probability and binomial tests</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC121/Week7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7. Filtering data and testing means (one-sample t-test)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC121/Week8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8. Related-samples t-tests, plotting means and SE bars</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC121/Week9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9. Unrelated-samples t-test and Power</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../2324/PSYC122/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">PSYC122</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC122/Week11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Week 11 - Correlation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC122/Week12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Week 12 - Correlation Part 2</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC122/Week13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. Week 13 - The Linear Model</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC122/Week14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Week 14 - Chi-Square</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC122/Week16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Week 16 – Hypotheses, associations</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC122/Week17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6. Week 17 – Better understanding the linear model</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC122/Week18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7. Week 18 – Developing the linear model</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC122/Week19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8. Week 19 – Linear models – critical perspectives</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">PSYC402</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part1/Week11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Recap of the linear model and practising data-wrangling in R</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part1/Week12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Categorical predictors</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part1/Week13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. More on interactions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part1/Week14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Logistic regression</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part1/Week15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Poisson regression</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/01-multilevel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to multilevel data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/02-mixed.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to linear mixed-effects models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/03-mixed.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Developing linear mixed-effects models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/04-glmm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to Generalized Linear Mixed-effects Models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/05-ordinal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to Ordinal Models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/how.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">How</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction: the why</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/knowledge-ecosystem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R knowledge</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/LICENSE.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LICENSE</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Summary</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/visualization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data visualization</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/what.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">What</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">2024/2025</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../2425/PSYC121/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">PSYC121</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC121/Week1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC121/Week2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Descriptive statistics in RStudio</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC121/Week3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. DVs and IVs in RStudio</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC121/Week4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Customisation of graphs, and z-scores</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC121/Week5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Class test</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC121/Week6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6. Sampling, probability and binomial tests</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC121/Week7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7. Filtering data and testing means (one-sample t-test)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC121/Week8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8. Related-samples t-tests, plotting means and SE bars</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC121/Week9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9. Unrelated-samples t-test and Power</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../2425/PSYC122/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">PSYC122</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC122/Week11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Week 11 - Correlation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC122/Week12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Week 12 - Correlation Part 2</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC122/Week13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. Week 13 - The Linear Model</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC122/Week14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Week 14 - Chi-Square</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC122/Week16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Week 16 – Hypotheses, associations</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC122/Week17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6. Week 17 – Better understanding the linear model</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC122/Week18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7. Week 18 – Developing the linear model</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC122/Week19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8. Week 19 – Linear models – critical perspectives</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../2425/PSYC214/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">PSYC214</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC214/Week1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC214/Week2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC214/Week3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC214/Week4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC214/Week5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC214/Week6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC214/Week7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC214/Week8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC214/Week9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../2425/PSYC234/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">PSYC234</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC234/Week1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Review of correlation, simple regression and demonstration of multiple regression</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC234/Week2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Multiple Regression Including Categorical Predictors</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC234/Week3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. Multiple Regression Models that Include Interactions (Moderated Variables)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC234/Week4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Mediation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC234/Week5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Factor Analysis and the Binomial Test</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC234/Week6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6. Wilcoxon rank-sum test and Wilcoxon signed-rank test</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC234/Week7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7. Kruskal-Wallis test and Friedman’s ANOVA</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC234/Week8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8. Binary logistic regression models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC234/Week9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9. Expanding on binary logistic regression</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
- <span class="menu-text">PSYC411</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part1/Week1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 1. Introducing Data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part1/Week2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 2. Manipulating data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part1/Week3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 3. Drawing graphs from data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part1/Week4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 4. Testing nominal data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part1/Week5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 5. Testing differences between groups</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part2/report-preface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 6. The structured research report – Quick start</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part2/how.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 6. How you can do the analysis work</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part2/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 6. Why we are asking you to do this</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part2/hypotheses-associations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 7. Hypotheses and associations</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part2/lm-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 8. Introduction to the linear model</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part2/visualization-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 9. Data visualization practices</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part2/lm-dev.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 10. Developing the linear model</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
- <span class="menu-text">PSYC412</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part1/Week11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 11. Recap of the linear model and practising data-wrangling in R</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part1/Week12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 12. Categorical predictors</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part1/Week13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 13. More on interactions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part1/Week14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 14. Logistic regression</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part1/Week15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 15. Poisson regression</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/01-multilevel-workbook.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 16. Workbook introduction to multilevel data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/01-multilevel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 16. Conceptual introduction to multilevel data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/02-mixed-workbook.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 17. Workbook introduction to mixed-effects models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/02-mixed.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 17. Conceptual introduction to mixed-effects models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/03-mixed-workbook.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 18. Developing linear mixed-effects models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/03-mixed.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 18. Conceptual introduction to developing linear mixed-effects models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/04-glmm-workbook.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week 19. Workbook introduction to Generalized Linear Mixed-effects Models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/04-glmm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 19. Conceptual introduction to Generalized Linear Mixed-effects Models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/05-ordinal-workbook.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 20. Workbook introduction to Ordinal (Mixed-effects) Models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/05-ordinal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 20. Conceptual introduction to Ordinal (Mixed-effects) Models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/report-preface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 00. The structured research report – Requirements</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/00-quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 00. Writing reproducible reports using Quarto</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/LICENSE.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LICENSE</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -929,7 +181,7 @@ div.csl-indent {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2425/PSYC121/index.html">2024/2025</a></li><li class="breadcrumb-item"><a href="../../../2425/PSYC412/part1/Week11.html">PSYC412</a></li><li class="breadcrumb-item"><a href="../../../2425/PSYC412/part2/04-glmm-workbook.html">Week 19. Workbook introduction to Generalized Linear Mixed-effects Models</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Week 19. Workbook introduction to Generalized Linear Mixed-effects Models</h1>
 <p class="subtitle lead">Written by Rob Davies</p>
@@ -1193,7 +445,7 @@ See ?effectsTheme for details.</code></pre>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>here() starts at /Users/amyatkinson/Documents/GitHub/previous-content</code></pre>
+<pre><code>here() starts at /Users/ivorym/Documents/PhD/Workbench/Full_Setup/previous-content</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lattice)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
@@ -1203,32 +455,30 @@ See ?effectsTheme for details.</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MuMIn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'MuMIn' was built under R version 4.3.3</code></pre>
+<pre><code>Registered S3 methods overwritten by 'MuMIn':
+  method        from 
+  nobs.multinom broom
+  nobs.fitdistr broom</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjPlot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'sjPlot' was built under R version 4.3.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Learn more about sjPlot with 'browseVignettes("sjPlot")'.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjPlot)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.4
-✔ forcats   1.0.0     ✔ stringr   1.5.0
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-✔ purrr     1.0.2     </code></pre>
+✔ dplyr     1.2.0     ✔ readr     2.1.6
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ ggplot2   4.0.2     ✔ tibble    3.3.1
+✔ lubridate 1.9.4     ✔ tidyr     1.3.2
+✔ purrr     1.2.1     </code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::combine() masks gridExtra::combine()
-✖ tidyr::expand()  masks Matrix::expand()
-✖ dplyr::filter()  masks stats::filter()
-✖ dplyr::lag()     masks stats::lag()
-✖ tidyr::pack()    masks Matrix::pack()
-✖ tidyr::unpack()  masks Matrix::unpack()
+✖ dplyr::combine()     masks gridExtra::combine()
+✖ tidyr::expand()      masks Matrix::expand()
+✖ dplyr::filter()      masks stats::filter()
+✖ dplyr::lag()         masks stats::lag()
+✖ tidyr::pack()        masks Matrix::pack()
+✖ ggplot2::set_theme() masks sjPlot::set_theme()
+✖ tidyr::unpack()      masks Matrix::unpack()
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
 </div>
@@ -1255,19 +505,19 @@ Code
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>long.orth <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"long.orth_2020-08-11.csv"</span>, </span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">col_types =</span> <span class="fu">cols</span>(</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Participant =</span> <span class="fu">col_factor</span>(),</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Time =</span> <span class="fu">col_factor</span>(),</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Study =</span> <span class="fu">col_factor</span>(),</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Instructions =</span> <span class="fu">col_factor</span>(),</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Version =</span> <span class="fu">col_factor</span>(),</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Word =</span> <span class="fu">col_factor</span>(),</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Orthography =</span> <span class="fu">col_factor</span>(),</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Measure =</span> <span class="fu">col_factor</span>(),</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Spelling.transcription =</span> <span class="fu">col_factor</span>()</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>                      )</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>                    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>long.orth <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"long.orth_2020-08-11.csv"</span>, </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">col_types =</span> <span class="fu">cols</span>(</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Participant =</span> <span class="fu">col_factor</span>(),</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Time =</span> <span class="fu">col_factor</span>(),</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Study =</span> <span class="fu">col_factor</span>(),</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Instructions =</span> <span class="fu">col_factor</span>(),</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Version =</span> <span class="fu">col_factor</span>(),</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Word =</span> <span class="fu">col_factor</span>(),</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Orthography =</span> <span class="fu">col_factor</span>(),</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Measure =</span> <span class="fu">col_factor</span>(),</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>                        <span class="at">Spelling.transcription =</span> <span class="fu">col_factor</span>()</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>                      )</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>                    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1297,7 +547,7 @@ Code
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1382,7 +632,7 @@ Code
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">glm</span>(Score <span class="sc">~</span> Instructions, <span class="at">family =</span> <span class="st">"binomial"</span>, <span class="at">data =</span> long.orth))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">glm</span>(Score <span class="sc">~</span> Instructions, <span class="at">family =</span> <span class="st">"binomial"</span>, <span class="at">data =</span> long.orth))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1448,7 +698,7 @@ Hint
 <p>We use a modified version of the <code>contr.sum()</code> function (provided in the <code>{memisc}</code> library) that allows us to define the base or reference level for the factor manually (see <a href="https://www.rdocumentation.org/packages/memisc/versions/0.99.17.2/topics/contr">documentation</a>).</p>
 <p>We need to start by loading the <code>{memisc}</code> library.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(memisc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(memisc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In some circumstances, this can create warnings.</p>
 <ul>
@@ -1475,7 +725,7 @@ Code
 <p>In the following sequence, I first check how R codes the levels of each factor by default, I then change the coding, and check that the change gets me what I want.</p>
 <p>We want effects coding for the orthography condition factor, with orthography condition coded as -1, +1. Check the coding.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Orthography)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Orthography)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>        present
 absent        0
@@ -1484,8 +734,8 @@ present       1</code></pre>
 </div>
 <p>You can see that <code>Orthography</code> condition is initially coded, by default, using dummy coding: absent (0); present (1). We want to change the coding, then check that we have got what we want.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Orthography) <span class="ot">&lt;-</span> <span class="fu">contr.sum</span>(<span class="dv">2</span>, <span class="at">base =</span> <span class="dv">1</span>)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Orthography)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Orthography) <span class="ot">&lt;-</span> <span class="fu">contr.sum</span>(<span class="dv">2</span>, <span class="at">base =</span> <span class="dv">1</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Orthography)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         2
 absent  -1
@@ -1494,7 +744,7 @@ present  1</code></pre>
 </div>
 <p>We want effects coding for the <code>Instructions</code> condition factor, with <code>Instructions</code> condition coded as -1, +1. Check the coding.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Instructions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Instructions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           incidental
 explicit            0
@@ -1503,8 +753,8 @@ incidental          1</code></pre>
 </div>
 <p>Change it.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Instructions) <span class="ot">&lt;-</span> <span class="fu">contr.sum</span>(<span class="dv">2</span>, <span class="at">base =</span> <span class="dv">2</span>)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Instructions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Instructions) <span class="ot">&lt;-</span> <span class="fu">contr.sum</span>(<span class="dv">2</span>, <span class="at">base =</span> <span class="dv">2</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Instructions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            1
 explicit    1
@@ -1513,7 +763,7 @@ incidental -1</code></pre>
 </div>
 <p>We want effects coding for the <code>Time</code> factor, with Time coded as -1, +1 Check the coding.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  2
 1 0
@@ -1522,8 +772,8 @@ incidental -1</code></pre>
 </div>
 <p>Change it.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Time) <span class="ot">&lt;-</span> <span class="fu">contr.sum</span>(<span class="dv">2</span>, <span class="at">base =</span> <span class="dv">1</span>)</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Time) <span class="ot">&lt;-</span> <span class="fu">contr.sum</span>(<span class="dv">2</span>, <span class="at">base =</span> <span class="dv">1</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   2
 1 -1
@@ -1539,8 +789,8 @@ incidental -1</code></pre>
 </blockquote>
 <p>Run the following code example, and reflect on what you see:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Time) <span class="ot">&lt;-</span> <span class="fu">contr.sum</span>(<span class="dv">3</span>, <span class="at">base =</span> <span class="dv">1</span>)</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Time) <span class="ot">&lt;-</span> <span class="fu">contr.sum</span>(<span class="dv">3</span>, <span class="at">base =</span> <span class="dv">1</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote class="blockquote">
 <p><strong>Pract.A.6.</strong> Changing the first number from 2 will result in warnings, showing that the number must match the number of factor levels for the factor.</p>
@@ -1550,8 +800,8 @@ incidental -1</code></pre>
 </blockquote>
 <p>Run the following code example, and reflect on what you see:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Time) <span class="ot">&lt;-</span> <span class="fu">contr.sum</span>(<span class="dv">2</span>, <span class="at">base =</span> <span class="dv">1</span>)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Time) <span class="ot">&lt;-</span> <span class="fu">contr.sum</span>(<span class="dv">2</span>, <span class="at">base =</span> <span class="dv">1</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(long.orth<span class="sc">$</span>Time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote class="blockquote">
 <p><strong>Pract.A.7.</strong> Changing the base number changes which level gets coded as -1 vs.&nbsp;1.</p>
@@ -1597,24 +847,24 @@ Code
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>long.orth.min.glmer <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span> </span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>                               </span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>                          Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> zConsistency_H <span class="sc">+</span> </span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>                               </span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>                          Orthography<span class="sc">:</span>Instructions <span class="sc">+</span></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>                               </span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>                          Orthography<span class="sc">:</span>zConsistency_H <span class="sc">+</span></span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>                               </span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>                          (<span class="dv">1</span> <span class="sc">|</span> Participant) <span class="sc">+</span> </span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>                               </span>
-<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>                          (<span class="dv">1</span> <span class="sc">|</span>Word),</span>
-<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">family =</span> <span class="st">"binomial"</span>, </span>
-<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, <span class="at">optCtrl=</span><span class="fu">list</span>(<span class="at">maxfun=</span><span class="fl">2e5</span>)),</span>
-<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a>                          <span class="at">data =</span> long.orth)</span>
-<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.min.glmer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>long.orth.min.glmer <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span> </span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>                               </span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>                          Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> zConsistency_H <span class="sc">+</span> </span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>                               </span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>                          Orthography<span class="sc">:</span>Instructions <span class="sc">+</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>                               </span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>                          Orthography<span class="sc">:</span>zConsistency_H <span class="sc">+</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>                               </span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>                          (<span class="dv">1</span> <span class="sc">|</span> Participant) <span class="sc">+</span> </span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>                               </span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>                          (<span class="dv">1</span> <span class="sc">|</span>Word),</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">family =</span> <span class="st">"binomial"</span>, </span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, <span class="at">optCtrl=</span><span class="fu">list</span>(<span class="at">maxfun=</span><span class="fl">2e5</span>)),</span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>                          <span class="at">data =</span> long.orth)</span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.min.glmer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Generalized linear mixed model fit by maximum likelihood (Laplace
   Approximation) [glmerMod]
@@ -1625,8 +875,8 @@ Formula: Score ~ Time + Orthography + Instructions + zConsistency_H +
    Data: long.orth
 Control: glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
 
-     AIC      BIC   logLik deviance df.resid 
-  1040.4   1086.7   -511.2   1022.4     1254 
+      AIC       BIC    logLik -2*log(L)  df.resid 
+   1040.4    1086.7    -511.2    1022.4      1254 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
@@ -1640,11 +890,11 @@ Number of obs: 1263, groups:  Participant, 41; Word, 16
 
 Fixed effects:
                              Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)                 -1.878462   0.443957  -4.231 2.32e-05 ***
+(Intercept)                 -1.878464   0.443942  -4.231 2.32e-05 ***
 Time2                        0.050136   0.083325   0.602    0.547    
 Orthography2                 0.455009   0.086813   5.241 1.59e-07 ***
-Instructions1                0.042289   0.230336   0.184    0.854    
-zConsistency_H              -0.618093   0.384005  -1.610    0.107    
+Instructions1                0.042290   0.230335   0.184    0.854    
+zConsistency_H              -0.618092   0.384002  -1.610    0.107    
 Orthography2:Instructions1   0.005786   0.083187   0.070    0.945    
 Orthography2:zConsistency_H  0.014611   0.083105   0.176    0.860    
 ---
@@ -1682,19 +932,19 @@ Code
 <div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>long.orth.min.glmer.expt <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span> mean_z_read <span class="sc">+</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>                               (<span class="dv">1</span> <span class="sc">|</span> Participant) <span class="sc">+</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>                               (<span class="dv">1</span> <span class="sc">|</span>Word),</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>                             <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, </span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">optCtrl=</span><span class="fu">list</span>(<span class="at">maxfun=</span><span class="fl">2e5</span>)),</span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>                             <span class="at">data =</span> long.orth)</span>
-<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.min.glmer.expt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>long.orth.min.glmer.expt <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span> mean_z_read <span class="sc">+</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                               (<span class="dv">1</span> <span class="sc">|</span> Participant) <span class="sc">+</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>                               (<span class="dv">1</span> <span class="sc">|</span>Word),</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>                             <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, </span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">optCtrl=</span><span class="fu">list</span>(<span class="at">maxfun=</span><span class="fl">2e5</span>)),</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>                             <span class="at">data =</span> long.orth)</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.min.glmer.expt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Generalized linear mixed model fit by maximum likelihood (Laplace
   Approximation) [glmerMod]
@@ -1703,8 +953,8 @@ Formula: Score ~ mean_z_read + (1 | Participant) + (1 | Word)
    Data: long.orth
 Control: glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
 
-     AIC      BIC   logLik deviance df.resid 
-  1000.4   1021.0   -496.2    992.4     1259 
+      AIC       BIC    logLik -2*log(L)  df.resid 
+   1000.4    1021.0    -496.2     992.4      1259 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
@@ -1718,7 +968,7 @@ Number of obs: 1263, groups:  Participant, 41; Word, 16
 
 Fixed effects:
             Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)  -1.7967     0.4027  -4.461 8.15e-06 ***
+(Intercept)  -1.7967     0.4027  -4.461 8.14e-06 ***
 mean_z_read   1.5090     0.1522   9.913  &lt; 2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -1757,24 +1007,24 @@ Code
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>long.orth.min.glmer <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span> </span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>                               </span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>                          Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> zConsistency_H <span class="sc">+</span> </span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>                               </span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>                          Orthography<span class="sc">:</span>Instructions <span class="sc">+</span></span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>                               </span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>                          Orthography<span class="sc">:</span>zConsistency_H <span class="sc">+</span></span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>                               </span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>                          (<span class="dv">1</span> <span class="sc">|</span> Participant) <span class="sc">+</span> </span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>                               </span>
-<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>                          (<span class="dv">1</span> <span class="sc">|</span>Word),</span>
-<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">family =</span> <span class="st">"binomial"</span>, </span>
-<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, <span class="at">optCtrl=</span><span class="fu">list</span>(<span class="at">maxfun=</span><span class="fl">2e5</span>)),</span>
-<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>                          <span class="at">data =</span> long.orth)</span>
-<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.min.glmer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>long.orth.min.glmer <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span> </span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>                               </span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>                          Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> zConsistency_H <span class="sc">+</span> </span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>                               </span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>                          Orthography<span class="sc">:</span>Instructions <span class="sc">+</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>                               </span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>                          Orthography<span class="sc">:</span>zConsistency_H <span class="sc">+</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>                               </span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>                          (<span class="dv">1</span> <span class="sc">|</span> Participant) <span class="sc">+</span> </span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>                               </span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>                          (<span class="dv">1</span> <span class="sc">|</span>Word),</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">family =</span> <span class="st">"binomial"</span>, </span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, <span class="at">optCtrl=</span><span class="fu">list</span>(<span class="at">maxfun=</span><span class="fl">2e5</span>)),</span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>                          <span class="at">data =</span> long.orth)</span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.min.glmer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Generalized linear mixed model fit by maximum likelihood (Laplace
   Approximation) [glmerMod]
@@ -1785,8 +1035,8 @@ Formula: Score ~ Time + Orthography + Instructions + zConsistency_H +
    Data: long.orth
 Control: glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
 
-     AIC      BIC   logLik deviance df.resid 
-  1040.4   1086.7   -511.2   1022.4     1254 
+      AIC       BIC    logLik -2*log(L)  df.resid 
+   1040.4    1086.7    -511.2    1022.4      1254 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
@@ -1800,11 +1050,11 @@ Number of obs: 1263, groups:  Participant, 41; Word, 16
 
 Fixed effects:
                              Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)                 -1.878462   0.443957  -4.231 2.32e-05 ***
+(Intercept)                 -1.878464   0.443942  -4.231 2.32e-05 ***
 Time2                        0.050136   0.083325   0.602    0.547    
 Orthography2                 0.455009   0.086813   5.241 1.59e-07 ***
-Instructions1                0.042289   0.230336   0.184    0.854    
-zConsistency_H              -0.618093   0.384005  -1.610    0.107    
+Instructions1                0.042290   0.230335   0.184    0.854    
+zConsistency_H              -0.618092   0.384002  -1.610    0.107    
 Orthography2:Instructions1   0.005786   0.083187   0.070    0.945    
 Orthography2:zConsistency_H  0.014611   0.083105   0.176    0.860    
 ---
@@ -1861,9 +1111,26 @@ Code
 <div class="callout-body-container callout-body">
 <p>First using the <code>{sjPlot}</code> <code>plot_model()</code> function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>porth <span class="ot">&lt;-</span> <span class="fu">plot_model</span>(long.orth.min.glmer,</span>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>porth <span class="ot">&lt;-</span> <span class="fu">plot_model</span>(long.orth.min.glmer,</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">type=</span><span class="st">"pred"</span>,</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">terms =</span> <span class="st">"Orthography"</span>) <span class="sc">+</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>         <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>         <span class="fu">ggtitle</span>(<span class="st">"Predicted probability"</span>) <span class="sc">+</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>         <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>You are calculating adjusted predictions on the population-level (i.e.
+  `type = "fixed"`) for a *generalized* linear mixed model.
+  This may produce biased estimates due to Jensen's inequality. Consider
+  setting `bias_correction = TRUE` to correct for this bias.
+  See also the documentation of the `bias_correction` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Scale for y is already present.
+Adding another scale for y, which will replace the existing scale.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>pzconsH <span class="ot">&lt;-</span> <span class="fu">plot_model</span>(long.orth.min.glmer,</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">type=</span><span class="st">"pred"</span>,</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">terms =</span> <span class="st">"Orthography"</span>) <span class="sc">+</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">terms =</span> <span class="st">"zConsistency_H"</span>) <span class="sc">+</span></span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>         <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>         <span class="fu">ggtitle</span>(<span class="st">"Predicted probability"</span>) <span class="sc">+</span></span>
 <span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>         <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1871,42 +1138,32 @@ Code
 <pre><code>Scale for y is already present.
 Adding another scale for y, which will replace the existing scale.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>pzconsH <span class="ot">&lt;-</span> <span class="fu">plot_model</span>(long.orth.min.glmer,</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">type=</span><span class="st">"pred"</span>,</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">terms =</span> <span class="st">"zConsistency_H"</span>) <span class="sc">+</span></span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>         <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>         <span class="fu">ggtitle</span>(<span class="st">"Predicted probability"</span>) <span class="sc">+</span></span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>         <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Scale for y is already present.
-Adding another scale for y, which will replace the existing scale.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(porth, pzconsH,</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">ncol=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(porth, pzconsH,</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">ncol=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="04-glmm-workbook_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="04-glmm-workbook_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Second using the <code>{effects}</code> library <code>effect()</code> function”</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>porth <span class="ot">&lt;-</span> <span class="fu">plot</span>(<span class="fu">effect</span>(<span class="st">"Orthography"</span>, <span class="at">mod =</span> long.orth.min.glmer))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>porth <span class="ot">&lt;-</span> <span class="fu">plot</span>(<span class="fu">effect</span>(<span class="st">"Orthography"</span>, <span class="at">mod =</span> long.orth.min.glmer))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>NOTE: Orthography is not a high-order term in the model</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>pzconsH <span class="ot">&lt;-</span> <span class="fu">plot</span>(<span class="fu">effect</span>(<span class="st">"zConsistency_H"</span>, <span class="at">mod =</span> long.orth.min.glmer))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>pzconsH <span class="ot">&lt;-</span> <span class="fu">plot</span>(<span class="fu">effect</span>(<span class="st">"zConsistency_H"</span>, <span class="at">mod =</span> long.orth.min.glmer))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>NOTE: zConsistency_H is not a high-order term in the model</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(porth, pzconsH,</span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">ncol=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(porth, pzconsH,</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">ncol=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="04-glmm-workbook_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="04-glmm-workbook_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1949,12 +1206,12 @@ Code
 <div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_model</span>(long.orth.min.glmer,</span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">type=</span><span class="st">"pred"</span>,</span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">terms =</span> <span class="st">"Instructions"</span>) <span class="sc">+</span></span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Predicted probability"</span>) <span class="sc">+</span></span>
-<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_model</span>(long.orth.min.glmer,</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">type=</span><span class="st">"pred"</span>,</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">terms =</span> <span class="st">"Instructions"</span>) <span class="sc">+</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Predicted probability"</span>) <span class="sc">+</span></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Scale for y is already present.
 Adding another scale for y, which will replace the existing scale.</code></pre>
@@ -1962,7 +1219,7 @@ Adding another scale for y, which will replace the existing scale.</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="04-glmm-workbook_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="04-glmm-workbook_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2006,20 +1263,23 @@ Code
 <div class="callout-body-container callout-body">
 <p>We can get a plot showing the predicted impact of the Instructions x Orthography interaction effect as follows.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_model</span>(long.orth.min.glmer,</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">type=</span><span class="st">"pred"</span>,</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"Instructions"</span>, <span class="st">"Orthography"</span>)) <span class="sc">+</span></span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Predicted probability"</span>) <span class="sc">+</span></span>
-<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_model</span>(long.orth.min.glmer,</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">type=</span><span class="st">"pred"</span>,</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"Instructions"</span>, <span class="st">"Orthography"</span>)) <span class="sc">+</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Predicted probability"</span>) <span class="sc">+</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Scale for y is already present.
-Adding another scale for y, which will replace the existing scale.</code></pre>
+Adding another scale for y, which will replace the existing scale.
+Ignoring unknown labels:
+• linetype : "Orthography"
+• shape : "Orthography"</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="04-glmm-workbook_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="04-glmm-workbook_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2075,25 +1335,25 @@ Code
 <div class="callout-body-container callout-body">
 <p>Run the code to fit the model and get a summary of results, as shown in the chapter</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>long.orth.min.glmer <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span> </span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>                               </span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>                            Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> zConsistency_H <span class="sc">+</span> </span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>                               </span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>                            Orthography<span class="sc">:</span>Instructions <span class="sc">+</span></span>
-<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>                               </span>
-<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>                            Orthography<span class="sc">:</span>zConsistency_H <span class="sc">+</span></span>
-<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>                               </span>
-<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>                               (<span class="dv">1</span> <span class="sc">|</span> Participant) <span class="sc">+</span> </span>
-<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>                               </span>
-<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>                               (<span class="dv">1</span> <span class="sc">|</span>Word),</span>
-<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>                            <span class="at">family =</span> <span class="st">"binomial"</span>, </span>
-<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, </span>
-<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">optCtrl=</span><span class="fu">list</span>(<span class="at">maxfun=</span><span class="fl">2e5</span>)),</span>
-<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a>                             <span class="at">data =</span> long.orth)</span>
-<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.min.glmer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>long.orth.min.glmer <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span> </span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>                               </span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>                            Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> zConsistency_H <span class="sc">+</span> </span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>                               </span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>                            Orthography<span class="sc">:</span>Instructions <span class="sc">+</span></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>                               </span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>                            Orthography<span class="sc">:</span>zConsistency_H <span class="sc">+</span></span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>                               </span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>                               (<span class="dv">1</span> <span class="sc">|</span> Participant) <span class="sc">+</span> </span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>                               </span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>                               (<span class="dv">1</span> <span class="sc">|</span>Word),</span>
+<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a>                            <span class="at">family =</span> <span class="st">"binomial"</span>, </span>
+<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, </span>
+<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">optCtrl=</span><span class="fu">list</span>(<span class="at">maxfun=</span><span class="fl">2e5</span>)),</span>
+<span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb52-17"><a href="#cb52-17" aria-hidden="true" tabindex="-1"></a>                             <span class="at">data =</span> long.orth)</span>
+<span id="cb52-18"><a href="#cb52-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-19"><a href="#cb52-19" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.min.glmer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Generalized linear mixed model fit by maximum likelihood (Laplace
   Approximation) [glmerMod]
@@ -2104,8 +1364,8 @@ Formula: Score ~ Time + Orthography + Instructions + zConsistency_H +
    Data: long.orth
 Control: glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
 
-     AIC      BIC   logLik deviance df.resid 
-  1040.4   1086.7   -511.2   1022.4     1254 
+      AIC       BIC    logLik -2*log(L)  df.resid 
+   1040.4    1086.7    -511.2    1022.4      1254 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
@@ -2119,11 +1379,11 @@ Number of obs: 1263, groups:  Participant, 41; Word, 16
 
 Fixed effects:
                              Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)                 -1.878462   0.443957  -4.231 2.32e-05 ***
+(Intercept)                 -1.878464   0.443942  -4.231 2.32e-05 ***
 Time2                        0.050136   0.083325   0.602    0.547    
 Orthography2                 0.455009   0.086813   5.241 1.59e-07 ***
-Instructions1                0.042289   0.230336   0.184    0.854    
-zConsistency_H              -0.618093   0.384005  -1.610    0.107    
+Instructions1                0.042290   0.230335   0.184    0.854    
+zConsistency_H              -0.618092   0.384002  -1.610    0.107    
 Orthography2:Instructions1   0.005786   0.083187   0.070    0.945    
 Orthography2:zConsistency_H  0.014611   0.083105   0.176    0.860    
 ---
@@ -2191,27 +1451,27 @@ Code
 <div class="callout-body-container callout-body">
 <p>Run the code to fit the model and get a summary of results, as shown in the chapter</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>long.orth.max.glmer <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span> </span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>                           </span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>                      Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> zConsistency_H <span class="sc">+</span> </span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>                           </span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>                      Orthography<span class="sc">:</span>Instructions <span class="sc">+</span></span>
-<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>                           </span>
-<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>                      Orthography<span class="sc">:</span>zConsistency_H <span class="sc">+</span></span>
-<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>                           </span>
-<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>                      (Time <span class="sc">+</span> Orthography <span class="sc">+</span> zConsistency_H <span class="sc">+</span> <span class="dv">1</span> <span class="sc">|</span> Participant) <span class="sc">+</span> </span>
-<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>                           </span>
-<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>                      (Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> <span class="dv">1</span> <span class="sc">|</span>Word),</span>
-<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a>                         </span>
-<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a>                      <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
-<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, </span>
-<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">optCtrl=</span><span class="fu">list</span>(<span class="at">maxfun=</span><span class="fl">2e5</span>)),</span>
-<span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a>                         </span>
-<span id="cb56-17"><a href="#cb56-17" aria-hidden="true" tabindex="-1"></a>                         <span class="at">data =</span> long.orth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>long.orth.max.glmer <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span> </span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>                           </span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>                      Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> zConsistency_H <span class="sc">+</span> </span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>                           </span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>                      Orthography<span class="sc">:</span>Instructions <span class="sc">+</span></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>                           </span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>                      Orthography<span class="sc">:</span>zConsistency_H <span class="sc">+</span></span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>                           </span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>                      (Time <span class="sc">+</span> Orthography <span class="sc">+</span> zConsistency_H <span class="sc">+</span> <span class="dv">1</span> <span class="sc">|</span> Participant) <span class="sc">+</span> </span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>                           </span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>                      (Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> <span class="dv">1</span> <span class="sc">|</span>Word),</span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>                         </span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>                      <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, </span>
+<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">optCtrl=</span><span class="fu">list</span>(<span class="at">maxfun=</span><span class="fl">2e5</span>)),</span>
+<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a>                         </span>
+<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a>                         <span class="at">data =</span> long.orth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>boundary (singular) fit: see help('isSingular')</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.max.glmer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.max.glmer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Generalized linear mixed model fit by maximum likelihood (Laplace
   Approximation) [glmerMod]
@@ -2223,8 +1483,8 @@ Formula: Score ~ Time + Orthography + Instructions + zConsistency_H +
    Data: long.orth
 Control: glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
 
-     AIC      BIC   logLik deviance df.resid 
-  1053.6   1192.4   -499.8    999.6     1236 
+      AIC       BIC    logLik -2*log(L)  df.resid 
+   1053.6    1192.4    -499.8     999.6      1236 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
@@ -2232,11 +1492,11 @@ Scaled residuals:
 
 Random effects:
  Groups      Name           Variance Std.Dev. Corr             
- Participant (Intercept)    2.043126 1.42938                   
+ Participant (Intercept)    2.043127 1.42938                   
              Time2          0.005675 0.07533   0.62            
              Orthography2   0.079980 0.28281   0.78 -0.01      
              zConsistency_H 0.065576 0.25608   0.49  0.99 -0.16
- Word        (Intercept)    2.793447 1.67136                   
+ Word        (Intercept)    2.793448 1.67136                   
              Time2          0.046736 0.21618   0.14            
              Orthography2   0.093740 0.30617  -0.68 -0.81      
              Instructions1  0.212706 0.46120  -0.74 -0.05  0.38
@@ -2244,12 +1504,12 @@ Number of obs: 1263, groups:  Participant, 41; Word, 16
 
 Fixed effects:
                             Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)                 -2.10099    0.49588  -4.237 2.27e-05 ***
-Time2                        0.02077    0.12285   0.169 0.865741    
+(Intercept)                 -2.10099    0.49589  -4.237 2.27e-05 ***
+Time2                        0.02077    0.12285   0.169 0.865740    
 Orthography2                 0.52480    0.15496   3.387 0.000708 ***
-Instructions1                0.24467    0.27281   0.897 0.369801    
-zConsistency_H              -0.67818    0.36310  -1.868 0.061802 .  
-Orthography2:Instructions1  -0.05133    0.10004  -0.513 0.607908    
+Instructions1                0.24467    0.27281   0.897 0.369805    
+zConsistency_H              -0.67818    0.36311  -1.868 0.061803 .  
+Orthography2:Instructions1  -0.05133    0.10004  -0.513 0.607907    
 Orthography2:zConsistency_H  0.05850    0.11634   0.503 0.615064    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
@@ -2288,24 +1548,24 @@ Code
 <div class="callout-body-container callout-body">
 <p>Run the code to fit the model and get a summary of results, as shown in the chapter</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>long.orth.<span class="fl">2.</span>glmer <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span> </span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>                             Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> zConsistency_H <span class="sc">+</span> </span>
-<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>                             Orthography<span class="sc">:</span>Instructions <span class="sc">+</span></span>
-<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>                             Orthography<span class="sc">:</span>zConsistency_H <span class="sc">+</span></span>
-<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a>                             (<span class="fu">dummy</span>(Orthography) <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Participant) <span class="sc">+</span> </span>
-<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a>                             (<span class="fu">dummy</span>(Orthography) <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Word),</span>
-<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a>                           </span>
-<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">family =</span> <span class="st">"binomial"</span>, </span>
-<span id="cb60-13"><a href="#cb60-13" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, </span>
-<span id="cb60-14"><a href="#cb60-14" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">optCtrl=</span><span class="fu">list</span>(<span class="at">maxfun=</span><span class="fl">2e5</span>)),</span>
-<span id="cb60-15"><a href="#cb60-15" aria-hidden="true" tabindex="-1"></a>                           </span>
-<span id="cb60-16"><a href="#cb60-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> long.orth)</span>
-<span id="cb60-17"><a href="#cb60-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-18"><a href="#cb60-18" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.<span class="fl">2.</span>glmer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>long.orth.<span class="fl">2.</span>glmer <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span> </span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>                             Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> zConsistency_H <span class="sc">+</span> </span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>                             Orthography<span class="sc">:</span>Instructions <span class="sc">+</span></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>                             Orthography<span class="sc">:</span>zConsistency_H <span class="sc">+</span></span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>                             (<span class="fu">dummy</span>(Orthography) <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Participant) <span class="sc">+</span> </span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a>                             (<span class="fu">dummy</span>(Orthography) <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Word),</span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a>                           </span>
+<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">family =</span> <span class="st">"binomial"</span>, </span>
+<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, </span>
+<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">optCtrl=</span><span class="fu">list</span>(<span class="at">maxfun=</span><span class="fl">2e5</span>)),</span>
+<span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a>                           </span>
+<span id="cb58-16"><a href="#cb58-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> long.orth)</span>
+<span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-18"><a href="#cb58-18" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.<span class="fl">2.</span>glmer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Generalized linear mixed model fit by maximum likelihood (Laplace
   Approximation) [glmerMod]
@@ -2316,8 +1576,8 @@ Formula: Score ~ Time + Orthography + Instructions + zConsistency_H +
    Data: long.orth
 Control: glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
 
-     AIC      BIC   logLik deviance df.resid 
-  1041.0   1097.6   -509.5   1019.0     1252 
+      AIC       BIC    logLik -2*log(L)  df.resid 
+   1041.0    1097.6    -509.5    1019.0      1252 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
@@ -2333,13 +1593,13 @@ Number of obs: 1263, groups:  Participant, 41; Word, 16
 
 Fixed effects:
                               Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)                 -1.9025041  0.4512478  -4.216 2.49e-05 ***
+(Intercept)                 -1.9025027  0.4512443  -4.216 2.49e-05 ***
 Time2                        0.0501974  0.0837186   0.600 0.548775    
-Orthography2                 0.4135728  0.1120791   3.690 0.000224 ***
-Instructions1                0.0455925  0.2234620   0.204 0.838332    
-zConsistency_H              -0.6254405  0.3958997  -1.580 0.114154    
-Orthography2:Instructions1   0.0019345  0.1038694   0.019 0.985141    
-Orthography2:zConsistency_H -0.0007113  0.0877740  -0.008 0.993534    
+Orthography2                 0.4135727  0.1120792   3.690 0.000224 ***
+Instructions1                0.0455920  0.2234615   0.204 0.838333    
+zConsistency_H              -0.6254414  0.3958971  -1.580 0.114151    
+Orthography2:Instructions1   0.0019343  0.1038694   0.019 0.985142    
+Orthography2:zConsistency_H -0.0007112  0.0877740  -0.008 0.993535    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -2371,24 +1631,24 @@ Code
 <div class="callout-body-container callout-body">
 <p>Run the code to fit the model and get a summary of results, as shown in the chapter</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>long.orth.<span class="fl">3.</span>glmer <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span> </span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>                             Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> zConsistency_H <span class="sc">+</span> </span>
-<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>                             Orthography<span class="sc">:</span>Instructions <span class="sc">+</span></span>
-<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>                             Orthography<span class="sc">:</span>zConsistency_H <span class="sc">+</span></span>
-<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a>                          (<span class="fu">dummy</span>(Orthography) <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Participant) <span class="sc">+</span> </span>
-<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>                          (<span class="fu">dummy</span>(Orthography) <span class="sc">+</span> <span class="fu">dummy</span>(Instructions) <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Word),</span>
-<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a>                           </span>
-<span id="cb62-12"><a href="#cb62-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">family =</span> <span class="st">"binomial"</span>, </span>
-<span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, </span>
-<span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">optCtrl=</span><span class="fu">list</span>(<span class="at">maxfun=</span><span class="fl">2e5</span>)),</span>
-<span id="cb62-15"><a href="#cb62-15" aria-hidden="true" tabindex="-1"></a>                           </span>
-<span id="cb62-16"><a href="#cb62-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> long.orth)</span>
-<span id="cb62-17"><a href="#cb62-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb62-18"><a href="#cb62-18" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.<span class="fl">3.</span>glmer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>long.orth.<span class="fl">3.</span>glmer <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span> </span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>                             Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> zConsistency_H <span class="sc">+</span> </span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>                             Orthography<span class="sc">:</span>Instructions <span class="sc">+</span></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>                             Orthography<span class="sc">:</span>zConsistency_H <span class="sc">+</span></span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a>                          (<span class="fu">dummy</span>(Orthography) <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Participant) <span class="sc">+</span> </span>
+<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a>                          (<span class="fu">dummy</span>(Orthography) <span class="sc">+</span> <span class="fu">dummy</span>(Instructions) <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Word),</span>
+<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a>                           </span>
+<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">family =</span> <span class="st">"binomial"</span>, </span>
+<span id="cb60-13"><a href="#cb60-13" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, </span>
+<span id="cb60-14"><a href="#cb60-14" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">optCtrl=</span><span class="fu">list</span>(<span class="at">maxfun=</span><span class="fl">2e5</span>)),</span>
+<span id="cb60-15"><a href="#cb60-15" aria-hidden="true" tabindex="-1"></a>                           </span>
+<span id="cb60-16"><a href="#cb60-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> long.orth)</span>
+<span id="cb60-17"><a href="#cb60-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-18"><a href="#cb60-18" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.<span class="fl">3.</span>glmer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Generalized linear mixed model fit by maximum likelihood (Laplace
   Approximation) [glmerMod]
@@ -2400,8 +1660,8 @@ Formula: Score ~ Time + Orthography + Instructions + zConsistency_H +
    Data: long.orth
 Control: glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
 
-     AIC      BIC   logLik deviance df.resid 
-  1036.5   1098.2   -506.2   1012.5     1251 
+      AIC       BIC    logLik -2*log(L)  df.resid 
+   1036.5    1098.2    -506.2    1012.5      1251 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
@@ -2411,20 +1671,20 @@ Random effects:
  Groups        Name                Variance Std.Dev.
  Participant   (Intercept)         1.64393  1.2822  
  Participant.1 dummy(Orthography)  0.55604  0.7457  
- Word          (Intercept)         1.94313  1.3940  
+ Word          (Intercept)         1.94314  1.3940  
  Word.1        dummy(Orthography)  0.01608  0.1268  
  Word.2        dummy(Instructions) 0.86694  0.9311  
 Number of obs: 1263, groups:  Participant, 41; Word, 16
 
 Fixed effects:
                               Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)                 -1.9621258  0.4400570  -4.459 8.24e-06 ***
-Time2                        0.0507347  0.0843236   0.602  0.54740    
-Orthography2                 0.4263703  0.1114243   3.827  0.00013 ***
-Instructions1                0.1907424  0.2632579   0.725  0.46873    
-zConsistency_H              -0.6270892  0.3669873  -1.709  0.08750 .  
-Orthography2:Instructions1  -0.0265727  0.1048392  -0.253  0.79991    
-Orthography2:zConsistency_H -0.0006303  0.0878824  -0.007  0.99428    
+(Intercept)                 -1.9621266  0.4400606  -4.459 8.24e-06 ***
+Time2                        0.0507348  0.0843236   0.602  0.54740    
+Orthography2                 0.4263702  0.1114243   3.827  0.00013 ***
+Instructions1                0.1907422  0.2632583   0.725  0.46873    
+zConsistency_H              -0.6270898  0.3669880  -1.709  0.08750 .  
+Orthography2:Instructions1  -0.0265728  0.1048392  -0.253  0.79991    
+Orthography2:zConsistency_H -0.0006304  0.0878824  -0.007  0.99428    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -2456,26 +1716,26 @@ Code
 <div class="callout-body-container callout-body">
 <p>Run the code to fit the model and get a summary of results, as shown in the chapter</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>long.orth.<span class="fl">4.</span>a.glmer <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span> </span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>                             Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> zConsistency_H <span class="sc">+</span> </span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>                             Orthography<span class="sc">:</span>Instructions <span class="sc">+</span></span>
-<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>                             Orthography<span class="sc">:</span>zConsistency_H <span class="sc">+</span></span>
-<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a>                      (<span class="fu">dummy</span>(Orthography) <span class="sc">+</span> zConsistency_H <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Participant) <span class="sc">+</span> </span>
-<span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a>                      (<span class="fu">dummy</span>(Orthography) <span class="sc">+</span> <span class="fu">dummy</span>(Instructions) <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Word),</span>
-<span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a>                           </span>
-<span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">family =</span> <span class="st">"binomial"</span>, </span>
-<span id="cb64-13"><a href="#cb64-13" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, </span>
-<span id="cb64-14"><a href="#cb64-14" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">optCtrl=</span><span class="fu">list</span>(<span class="at">maxfun=</span><span class="fl">2e5</span>)),</span>
-<span id="cb64-15"><a href="#cb64-15" aria-hidden="true" tabindex="-1"></a>                           </span>
-<span id="cb64-16"><a href="#cb64-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> long.orth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>long.orth.<span class="fl">4.</span>a.glmer <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span> </span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>                             Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> zConsistency_H <span class="sc">+</span> </span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>                             Orthography<span class="sc">:</span>Instructions <span class="sc">+</span></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>                             Orthography<span class="sc">:</span>zConsistency_H <span class="sc">+</span></span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a>                      (<span class="fu">dummy</span>(Orthography) <span class="sc">+</span> zConsistency_H <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Participant) <span class="sc">+</span> </span>
+<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>                      (<span class="fu">dummy</span>(Orthography) <span class="sc">+</span> <span class="fu">dummy</span>(Instructions) <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Word),</span>
+<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a>                           </span>
+<span id="cb62-12"><a href="#cb62-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">family =</span> <span class="st">"binomial"</span>, </span>
+<span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, </span>
+<span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">optCtrl=</span><span class="fu">list</span>(<span class="at">maxfun=</span><span class="fl">2e5</span>)),</span>
+<span id="cb62-15"><a href="#cb62-15" aria-hidden="true" tabindex="-1"></a>                           </span>
+<span id="cb62-16"><a href="#cb62-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> long.orth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>boundary (singular) fit: see help('isSingular')</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.<span class="fl">4.</span>a.glmer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.<span class="fl">4.</span>a.glmer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Generalized linear mixed model fit by maximum likelihood (Laplace
   Approximation) [glmerMod]
@@ -2487,8 +1747,8 @@ Formula: Score ~ Time + Orthography + Instructions + zConsistency_H +
    Data: long.orth
 Control: glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
 
-     AIC      BIC   logLik deviance df.resid 
-  1038.5   1105.3   -506.2   1012.5     1250 
+      AIC       BIC    logLik -2*log(L)  df.resid 
+   1038.5    1105.3    -506.2    1012.5      1250 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
@@ -2498,7 +1758,7 @@ Random effects:
  Groups        Name                Variance  Std.Dev. 
  Participant   (Intercept)         1.644e+00 1.282e+00
  Participant.1 dummy(Orthography)  5.560e-01 7.456e-01
- Participant.2 zConsistency_H      1.259e-10 1.122e-05
+ Participant.2 zConsistency_H      1.132e-13 3.365e-07
  Word          (Intercept)         1.943e+00 1.394e+00
  Word.1        dummy(Orthography)  1.604e-02 1.266e-01
  Word.2        dummy(Instructions) 8.669e-01 9.311e-01
@@ -2506,24 +1766,24 @@ Number of obs: 1263, groups:  Participant, 41; Word, 16
 
 Fixed effects:
                               Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)                 -1.9621298  0.4400610  -4.459 8.24e-06 ***
-Time2                        0.0507346  0.0843237   0.602  0.54740    
-Orthography2                 0.4263731  0.1114190   3.827  0.00013 ***
-Instructions1                0.1907320  0.2632610   0.724  0.46876    
-zConsistency_H              -0.6270931  0.3669852  -1.709  0.08749 .  
-Orthography2:Instructions1  -0.0265706  0.1048369  -0.253  0.79992    
-Orthography2:zConsistency_H -0.0006353  0.0878784  -0.007  0.99423    
+(Intercept)                 -1.9621281  0.4366140  -4.494 6.99e-06 ***
+Time2                        0.0507348  0.0842926   0.602   0.5472    
+Orthography2                 0.4263729  0.1077050   3.959 7.54e-05 ***
+Instructions1                0.1907324  0.2596165   0.735   0.4625    
+zConsistency_H              -0.6270887  0.3667532  -1.710   0.0873 .  
+Orthography2:Instructions1  -0.0265708  0.1042770  -0.255   0.7989    
+Orthography2:zConsistency_H -0.0006352  0.0863652  -0.007   0.9941    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Correlation of Fixed Effects:
             (Intr) Time2  Orthg2 Instr1 zCns_H Or2:I1
 Time2        0.007                                   
-Orthogrphy2  0.028  0.008                            
-Instructns1 -0.127  0.022  0.019                     
-zCnsstncy_H  0.017 -0.002 -0.026  0.011              
-Orthgrp2:I1  0.013  0.001  0.003  0.068 -0.009       
-Orthgr2:C_H -0.030  0.002  0.182  0.002 -0.026 -0.018
+Orthogrphy2  0.040  0.009                            
+Instructns1 -0.119  0.023  0.013                     
+zCnsstncy_H  0.015 -0.003 -0.023  0.011              
+Orthgrp2:I1  0.008  0.001  0.001  0.081 -0.009       
+Orthgr2:C_H -0.025  0.001  0.162  0.001 -0.025 -0.022
 optimizer (bobyqa) convergence code: 0 (OK)
 boundary (singular) fit: see help('isSingular')</code></pre>
 </div>
@@ -2549,26 +1809,26 @@ Code
 <div class="callout-body-container callout-body">
 <p>Run the code to fit the model and get a summary of results, as shown in the chapter</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>long.orth.<span class="fl">4.</span>b.glmer <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span> </span>
-<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>                             Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> zConsistency_H <span class="sc">+</span> </span>
-<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>                             Orthography<span class="sc">:</span>Instructions <span class="sc">+</span></span>
-<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>                             Orthography<span class="sc">:</span>zConsistency_H <span class="sc">+</span></span>
-<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a>          (<span class="fu">dummy</span>(Orthography) <span class="sc">+</span> <span class="fu">dummy</span>(Time) <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Participant) <span class="sc">+</span> </span>
-<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a>                             </span>
-<span id="cb68-10"><a href="#cb68-10" aria-hidden="true" tabindex="-1"></a>          (<span class="fu">dummy</span>(Orthography) <span class="sc">+</span> <span class="fu">dummy</span>(Instructions) <span class="sc">+</span> <span class="fu">dummy</span>(Time) <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Word),</span>
-<span id="cb68-11"><a href="#cb68-11" aria-hidden="true" tabindex="-1"></a>                           </span>
-<span id="cb68-12"><a href="#cb68-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">family =</span> <span class="st">"binomial"</span>, </span>
-<span id="cb68-13"><a href="#cb68-13" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, </span>
-<span id="cb68-14"><a href="#cb68-14" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">optCtrl=</span><span class="fu">list</span>(<span class="at">maxfun=</span><span class="fl">2e5</span>)),</span>
-<span id="cb68-15"><a href="#cb68-15" aria-hidden="true" tabindex="-1"></a>                           </span>
-<span id="cb68-16"><a href="#cb68-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> long.orth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>long.orth.<span class="fl">4.</span>b.glmer <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span> </span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>                             Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> zConsistency_H <span class="sc">+</span> </span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>                             Orthography<span class="sc">:</span>Instructions <span class="sc">+</span></span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>                             Orthography<span class="sc">:</span>zConsistency_H <span class="sc">+</span></span>
+<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a>          (<span class="fu">dummy</span>(Orthography) <span class="sc">+</span> <span class="fu">dummy</span>(Time) <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Participant) <span class="sc">+</span> </span>
+<span id="cb66-9"><a href="#cb66-9" aria-hidden="true" tabindex="-1"></a>                             </span>
+<span id="cb66-10"><a href="#cb66-10" aria-hidden="true" tabindex="-1"></a>          (<span class="fu">dummy</span>(Orthography) <span class="sc">+</span> <span class="fu">dummy</span>(Instructions) <span class="sc">+</span> <span class="fu">dummy</span>(Time) <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Word),</span>
+<span id="cb66-11"><a href="#cb66-11" aria-hidden="true" tabindex="-1"></a>                           </span>
+<span id="cb66-12"><a href="#cb66-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">family =</span> <span class="st">"binomial"</span>, </span>
+<span id="cb66-13"><a href="#cb66-13" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, </span>
+<span id="cb66-14"><a href="#cb66-14" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">optCtrl=</span><span class="fu">list</span>(<span class="at">maxfun=</span><span class="fl">2e5</span>)),</span>
+<span id="cb66-15"><a href="#cb66-15" aria-hidden="true" tabindex="-1"></a>                           </span>
+<span id="cb66-16"><a href="#cb66-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> long.orth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>boundary (singular) fit: see help('isSingular')</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.<span class="fl">4.</span>b.glmer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.<span class="fl">4.</span>b.glmer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Generalized linear mixed model fit by maximum likelihood (Laplace
   Approximation) [glmerMod]
@@ -2580,44 +1840,44 @@ Formula: Score ~ Time + Orthography + Instructions + zConsistency_H +
    Data: long.orth
 Control: glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
 
-     AIC      BIC   logLik deviance df.resid 
-  1040.5   1112.5   -506.2   1012.5     1249 
+      AIC       BIC    logLik -2*log(L)  df.resid 
+   1040.5    1112.5    -506.2    1012.5      1249 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
 -3.9952 -0.4068 -0.1920  0.1838  5.9309 
 
 Random effects:
- Groups        Name                Variance  Std.Dev. 
- Participant   (Intercept)         1.644e+00 1.2821915
- Participant.1 dummy(Orthography)  5.560e-01 0.7456312
- Participant.2 dummy(Time)         0.000e+00 0.0000000
- Word          (Intercept)         1.943e+00 1.3939636
- Word.1        dummy(Orthography)  1.604e-02 0.1266478
- Word.2        dummy(Instructions) 8.669e-01 0.9310620
- Word.3        dummy(Time)         2.161e-07 0.0004648
+ Groups        Name                Variance  Std.Dev.
+ Participant   (Intercept)         1.644e+00 1.28219 
+ Participant.1 dummy(Orthography)  5.560e-01 0.74563 
+ Participant.2 dummy(Time)         0.000e+00 0.00000 
+ Word          (Intercept)         1.943e+00 1.39396 
+ Word.1        dummy(Orthography)  1.604e-02 0.12665 
+ Word.2        dummy(Instructions) 8.669e-01 0.93106 
+ Word.3        dummy(Time)         1.961e-08 0.00014 
 Number of obs: 1263, groups:  Participant, 41; Word, 16
 
 Fixed effects:
                               Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)                 -1.9621302  0.4400578  -4.459 8.24e-06 ***
-Time2                        0.0507347  0.0843253   0.602  0.54740    
-Orthography2                 0.4263731  0.1114192   3.827  0.00013 ***
-Instructions1                0.1907329  0.2632605   0.725  0.46876    
-zConsistency_H              -0.6270910  0.3669905  -1.709  0.08750 .  
-Orthography2:Instructions1  -0.0265706  0.1048370  -0.253  0.79992    
-Orthography2:zConsistency_H -0.0006351  0.0878784  -0.007  0.99423    
+(Intercept)                 -1.9621308  0.4366140  -4.494 6.99e-06 ***
+Time2                        0.0507347  0.0842926   0.602   0.5472    
+Orthography2                 0.4263731  0.1077051   3.959 7.54e-05 ***
+Instructions1                0.1907322  0.2596166   0.735   0.4625    
+zConsistency_H              -0.6270893  0.3667532  -1.710   0.0873 .  
+Orthography2:Instructions1  -0.0265707  0.1042771  -0.255   0.7989    
+Orthography2:zConsistency_H -0.0006351  0.0863652  -0.007   0.9941    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Correlation of Fixed Effects:
             (Intr) Time2  Orthg2 Instr1 zCns_H Or2:I1
 Time2        0.007                                   
-Orthogrphy2  0.028  0.008                            
-Instructns1 -0.127  0.022  0.019                     
-zCnsstncy_H  0.017 -0.002 -0.026  0.011              
-Orthgrp2:I1  0.013  0.001  0.003  0.068 -0.009       
-Orthgr2:C_H -0.030  0.002  0.182  0.002 -0.026 -0.018
+Orthogrphy2  0.040  0.009                            
+Instructns1 -0.119  0.023  0.013                     
+zCnsstncy_H  0.015 -0.003 -0.023  0.011              
+Orthgrp2:I1  0.008  0.001  0.001  0.081 -0.009       
+Orthgr2:C_H -0.025  0.001  0.162  0.001 -0.025 -0.022
 optimizer (bobyqa) convergence code: 0 (OK)
 boundary (singular) fit: see help('isSingular')</code></pre>
 </div>
@@ -2655,25 +1915,25 @@ Code
 <div id="callout-32" class="callout-32-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(long.orth.min.glmer, long.orth.<span class="fl">2.</span>glmer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(long.orth.min.glmer, long.orth.<span class="fl">2.</span>glmer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Data: long.orth
 Models:
 long.orth.min.glmer: Score ~ Time + Orthography + Instructions + zConsistency_H + Orthography:Instructions + Orthography:zConsistency_H + (1 | Participant) + (1 | Word)
 long.orth.2.glmer: Score ~ Time + Orthography + Instructions + zConsistency_H + Orthography:Instructions + Orthography:zConsistency_H + (dummy(Orthography) + 1 || Participant) + (dummy(Orthography) + 1 || Word)
-                    npar    AIC    BIC  logLik deviance  Chisq Df Pr(&gt;Chisq)
-long.orth.min.glmer    9 1040.4 1086.7 -511.20   1022.4                     
-long.orth.2.glmer     11 1041.0 1097.6 -509.51   1019.0 3.3909  2     0.1835</code></pre>
+                    npar    AIC    BIC  logLik -2*log(L)  Chisq Df Pr(&gt;Chisq)
+long.orth.min.glmer    9 1040.4 1086.7 -511.20    1022.4                     
+long.orth.2.glmer     11 1041.0 1097.6 -509.51    1019.0 3.3909  2     0.1835</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(long.orth.min.glmer, long.orth.<span class="fl">3.</span>glmer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(long.orth.min.glmer, long.orth.<span class="fl">3.</span>glmer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Data: long.orth
 Models:
 long.orth.min.glmer: Score ~ Time + Orthography + Instructions + zConsistency_H + Orthography:Instructions + Orthography:zConsistency_H + (1 | Participant) + (1 | Word)
 long.orth.3.glmer: Score ~ Time + Orthography + Instructions + zConsistency_H + Orthography:Instructions + Orthography:zConsistency_H + (dummy(Orthography) + 1 || Participant) + (dummy(Orthography) + dummy(Instructions) + 1 || Word)
-                    npar    AIC    BIC  logLik deviance  Chisq Df Pr(&gt;Chisq)  
-long.orth.min.glmer    9 1040.4 1086.7 -511.20   1022.4                       
-long.orth.3.glmer     12 1036.5 1098.2 -506.24   1012.5 9.9115  3    0.01933 *
+                    npar    AIC    BIC  logLik -2*log(L)  Chisq Df Pr(&gt;Chisq)  
+long.orth.min.glmer    9 1040.4 1086.7 -511.20    1022.4                       
+long.orth.3.glmer     12 1036.5 1098.2 -506.24    1012.5 9.9115  3    0.01933 *
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
@@ -2701,23 +1961,23 @@ Code
 <div class="callout-body-container callout-body">
 <p>Run the code to fit the model and get a summary of results</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>long.orth.<span class="fl">3.</span>glmer.check <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span></span>
-<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>                            </span>
-<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>                            Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> zConsistency_H <span class="sc">+</span></span>
-<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a>                            Orthography<span class="sc">:</span>Instructions <span class="sc">+</span></span>
-<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-7"><a href="#cb76-7" aria-hidden="true" tabindex="-1"></a>                            Orthography<span class="sc">:</span>zConsistency_H <span class="sc">+</span></span>
-<span id="cb76-8"><a href="#cb76-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-9"><a href="#cb76-9" aria-hidden="true" tabindex="-1"></a>                            (<span class="fu">dummy</span>(Orthography) <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Participant) <span class="sc">+</span></span>
-<span id="cb76-10"><a href="#cb76-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-11"><a href="#cb76-11" aria-hidden="true" tabindex="-1"></a>                            (<span class="fu">dummy</span>(Orthography) <span class="sc">+</span> <span class="fu">dummy</span>(Instructions) <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Word),</span>
-<span id="cb76-12"><a href="#cb76-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-13"><a href="#cb76-13" aria-hidden="true" tabindex="-1"></a>                           <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
-<span id="cb76-14"><a href="#cb76-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-15"><a href="#cb76-15" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> long.orth)</span>
-<span id="cb76-16"><a href="#cb76-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-17"><a href="#cb76-17" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.<span class="fl">3.</span>glmer.check)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>long.orth.<span class="fl">3.</span>glmer.check <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span></span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>                            </span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>                            Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> zConsistency_H <span class="sc">+</span></span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>                            Orthography<span class="sc">:</span>Instructions <span class="sc">+</span></span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a>                            Orthography<span class="sc">:</span>zConsistency_H <span class="sc">+</span></span>
+<span id="cb74-8"><a href="#cb74-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-9"><a href="#cb74-9" aria-hidden="true" tabindex="-1"></a>                            (<span class="fu">dummy</span>(Orthography) <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Participant) <span class="sc">+</span></span>
+<span id="cb74-10"><a href="#cb74-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-11"><a href="#cb74-11" aria-hidden="true" tabindex="-1"></a>                            (<span class="fu">dummy</span>(Orthography) <span class="sc">+</span> <span class="fu">dummy</span>(Instructions) <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Word),</span>
+<span id="cb74-12"><a href="#cb74-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-13"><a href="#cb74-13" aria-hidden="true" tabindex="-1"></a>                           <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
+<span id="cb74-14"><a href="#cb74-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-15"><a href="#cb74-15" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> long.orth)</span>
+<span id="cb74-16"><a href="#cb74-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-17"><a href="#cb74-17" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.<span class="fl">3.</span>glmer.check)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Generalized linear mixed model fit by maximum likelihood (Laplace
   Approximation) [glmerMod]
@@ -2728,31 +1988,31 @@ Formula: Score ~ Time + Orthography + Instructions + zConsistency_H +
     1 || Word)
    Data: long.orth
 
-     AIC      BIC   logLik deviance df.resid 
-  1036.5   1098.2   -506.2   1012.5     1251 
+      AIC       BIC    logLik -2*log(L)  df.resid 
+   1036.5    1098.2    -506.2    1012.5      1251 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
--3.9954 -0.4068 -0.1920  0.1838  5.9309 
+-3.9948 -0.4068 -0.1920  0.1838  5.9306 
 
 Random effects:
  Groups        Name                Variance Std.Dev.
- Participant   (Intercept)         1.64408  1.2822  
- Participant.1 dummy(Orthography)  0.55593  0.7456  
- Word          (Intercept)         1.94321  1.3940  
- Word.1        dummy(Orthography)  0.01614  0.1270  
- Word.2        dummy(Instructions) 0.86707  0.9312  
+ Participant   (Intercept)         1.64381  1.2821  
+ Participant.1 dummy(Orthography)  0.55620  0.7458  
+ Word          (Intercept)         1.94298  1.3939  
+ Word.1        dummy(Orthography)  0.01611  0.1269  
+ Word.2        dummy(Instructions) 0.86700  0.9311  
 Number of obs: 1263, groups:  Participant, 41; Word, 16
 
 Fixed effects:
-                              Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)                 -1.9623120  0.4400735  -4.459 8.23e-06 ***
-Time2                        0.0506825  0.0843238   0.601  0.54781    
-Orthography2                 0.4263937  0.1114265   3.827  0.00013 ***
-Instructions1                0.1907245  0.2632699   0.724  0.46879    
-zConsistency_H              -0.6269717  0.3669913  -1.708  0.08756 .  
-Orthography2:Instructions1  -0.0266343  0.1048368  -0.254  0.79945    
-Orthography2:zConsistency_H -0.0006103  0.0878884  -0.007  0.99446    
+                             Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)                 -1.962125   0.440051  -4.459 8.24e-06 ***
+Time2                        0.050697   0.084323   0.601  0.54769    
+Orthography2                 0.426376   0.111431   3.826  0.00013 ***
+Instructions1                0.190655   0.263255   0.724  0.46893    
+zConsistency_H              -0.626992   0.366976  -1.709  0.08754 .  
+Orthography2:Instructions1  -0.026550   0.104844  -0.253  0.80009    
+Orthography2:zConsistency_H -0.000632   0.087885  -0.007  0.99426    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -2792,26 +2052,26 @@ Code
 <div class="callout-body-container callout-body">
 <p>Run the code to fit the model and get a summary of results</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>long.orth.<span class="fl">3.</span>glmer.check <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span></span>
-<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>                             Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> zConsistency_H <span class="sc">+</span></span>
-<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>                             Orthography<span class="sc">:</span>Instructions <span class="sc">+</span></span>
-<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a>                             Orthography<span class="sc">:</span>zConsistency_H <span class="sc">+</span></span>
-<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a>                             (Orthography <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Participant) <span class="sc">+</span></span>
-<span id="cb78-9"><a href="#cb78-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-10"><a href="#cb78-10" aria-hidden="true" tabindex="-1"></a>                             (Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Word),</span>
-<span id="cb78-11"><a href="#cb78-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-12"><a href="#cb78-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
-<span id="cb78-13"><a href="#cb78-13" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, </span>
-<span id="cb78-14"><a href="#cb78-14" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">optCtrl=</span><span class="fu">list</span>(<span class="at">maxfun=</span><span class="fl">2e5</span>)),</span>
-<span id="cb78-15"><a href="#cb78-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-16"><a href="#cb78-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> long.orth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>long.orth.<span class="fl">3.</span>glmer.check <span class="ot">&lt;-</span> <span class="fu">glmer</span>(Score <span class="sc">~</span></span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>                             Time <span class="sc">+</span> Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> zConsistency_H <span class="sc">+</span></span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a>                             Orthography<span class="sc">:</span>Instructions <span class="sc">+</span></span>
+<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a>                             Orthography<span class="sc">:</span>zConsistency_H <span class="sc">+</span></span>
+<span id="cb76-7"><a href="#cb76-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-8"><a href="#cb76-8" aria-hidden="true" tabindex="-1"></a>                             (Orthography <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Participant) <span class="sc">+</span></span>
+<span id="cb76-9"><a href="#cb76-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-10"><a href="#cb76-10" aria-hidden="true" tabindex="-1"></a>                             (Orthography <span class="sc">+</span> Instructions <span class="sc">+</span> <span class="dv">1</span> <span class="sc">||</span> Word),</span>
+<span id="cb76-11"><a href="#cb76-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-12"><a href="#cb76-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
+<span id="cb76-13"><a href="#cb76-13" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">glmerControl</span>(<span class="at">optimizer=</span><span class="st">"bobyqa"</span>, </span>
+<span id="cb76-14"><a href="#cb76-14" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">optCtrl=</span><span class="fu">list</span>(<span class="at">maxfun=</span><span class="fl">2e5</span>)),</span>
+<span id="cb76-15"><a href="#cb76-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-16"><a href="#cb76-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> long.orth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>boundary (singular) fit: see help('isSingular')</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.<span class="fl">3.</span>glmer.check)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(long.orth.<span class="fl">3.</span>glmer.check)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Generalized linear mixed model fit by maximum likelihood (Laplace
   Approximation) [glmerMod]
@@ -2822,8 +2082,8 @@ Formula: Score ~ Time + Orthography + Instructions + zConsistency_H +
    Data: long.orth
 Control: glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
 
-     AIC      BIC   logLik deviance df.resid 
-  1039.1   1131.6   -501.5   1003.1     1245 
+      AIC       BIC    logLik -2*log(L)  df.resid 
+   1039.1    1131.6    -501.5    1003.1      1245 
 
 Scaled residuals: 
     Min      1Q  Median      3Q     Max 
@@ -2831,36 +2091,36 @@ Scaled residuals:
 
 Random effects:
  Groups        Name                   Variance  Std.Dev.  Corr
- Participant   (Intercept)            0.000e+00 0.000e+00     
- Participant.1 Orthographyabsent      1.235e+00 1.111e+00     
-               Orthographypresent     2.637e+00 1.624e+00 1.00
- Word          (Intercept)            8.881e-09 9.424e-05     
- Word.1        Orthographyabsent      1.637e+00 1.279e+00     
-               Orthographypresent     8.779e-01 9.370e-01 1.00
- Word.2        Instructionsexplicit   4.259e-01 6.526e-01     
-               Instructionsincidental 2.373e+00 1.540e+00 1.00
+ Participant   (Intercept)            0.000e+00 0.0000000     
+ Participant.1 Orthographyabsent      1.235e+00 1.1111039     
+               Orthographypresent     2.637e+00 1.6239858 1.00
+ Word          (Intercept)            1.079e-08 0.0001039     
+ Word.1        Orthographyabsent      1.637e+00 1.2793365     
+               Orthographypresent     8.779e-01 0.9369830 1.00
+ Word.2        Instructionsexplicit   4.259e-01 0.6526294     
+               Instructionsincidental 2.373e+00 1.5404704 1.00
 Number of obs: 1263, groups:  Participant, 41; Word, 16
 
 Fixed effects:
                             Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)                 -1.98581    0.46205  -4.298 1.72e-05 ***
-Time2                        0.04821    0.08442   0.571 0.567946    
-Orthography2                 0.44338    0.12723   3.485 0.000492 ***
-Instructions1                0.22950    0.26576   0.864 0.387842    
-zConsistency_H              -0.61319    0.33663  -1.822 0.068522 .  
-Orthography2:Instructions1  -0.03827    0.09512  -0.402 0.687475    
-Orthography2:zConsistency_H  0.01581    0.09969   0.159 0.874017    
+(Intercept)                 -1.98581    0.45851  -4.331 1.48e-05 ***
+Time2                        0.04821    0.08439   0.571   0.5678    
+Orthography2                 0.44338    0.10786   4.111 3.95e-05 ***
+Instructions1                0.22950    0.26055   0.881   0.3784    
+zConsistency_H              -0.61318    0.33510  -1.830   0.0673 .  
+Orthography2:Instructions1  -0.03827    0.09408  -0.407   0.6842    
+Orthography2:zConsistency_H  0.01581    0.09699   0.163   0.8705    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Correlation of Fixed Effects:
             (Intr) Time2  Orthg2 Instr1 zCns_H Or2:I1
 Time2        0.007                                   
-Orthogrphy2 -0.127  0.014                            
-Instructns1 -0.259  0.022  0.007                     
-zCnsstncy_H  0.020 -0.003 -0.059  0.041              
-Orthgrp2:I1  0.020  0.004 -0.021  0.277 -0.031       
-Orthgr2:C_H -0.041  0.003  0.256 -0.002 -0.410 -0.016
+Orthogrphy2 -0.112  0.012                            
+Instructns1 -0.256  0.023  0.013                     
+zCnsstncy_H  0.016 -0.003 -0.033  0.032              
+Orthgrp2:I1  0.014  0.004 -0.021  0.312 -0.024       
+Orthgr2:C_H -0.028  0.002  0.168  0.001 -0.413 -0.017
 optimizer (bobyqa) convergence code: 0 (OK)
 boundary (singular) fit: see help('isSingular')</code></pre>
 </div>
@@ -2979,6 +2239,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -3089,6 +2351,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -3314,18 +2577,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../../2425/PSYC412/part2/03-mixed.html" class="pagination-link" aria-label="Week 18. Conceptual introduction to developing linear mixed-effects models">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 18. Conceptual introduction to developing linear mixed-effects models</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../../2425/PSYC412/part2/04-glmm.html" class="pagination-link" aria-label="Week 19. Conceptual introduction to Generalized Linear Mixed-effects Models">
-        <span class="nav-page-text">Week 19. Conceptual introduction to Generalized Linear Mixed-effects Models</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

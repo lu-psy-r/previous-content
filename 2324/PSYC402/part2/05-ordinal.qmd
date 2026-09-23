@@ -647,7 +647,7 @@ If you then run the line `plot(dat)` you can see what this gets us for these kin
 @fig-rating-clmm-factor3-predictions presents a grid of plots showing the model-predicted probabilities that a rating response will have one value for each of the 1-9 rating response values that are possible given the Likert rating scale used in data collection.
 In the grid, a different plot is shown for each possible response value, indicating how the probability varies that the rating response will take that value.
 
-```{r}
+```{r eval=FALSE}
 #| label: fig-rating-clmm-factor3-predictions
 #| fig-cap: "A grid of plots showing marginal or conditional predicted probabilities that a rating response will have one value (among the 1-9 rating values possible), indicating how these predicted probabilities vary given variation in values of the standardized reading strategy (FACTOR3) variable."
 #| fig-alt: "The figure presents a grid of plots showing marginal or conditional -- adjusted prediction values -- predicted ratings and how they vary given variation in values of the standardized reading strategy (FACTOR3) variable. We can see flat lines for plots corresponding to predictions concerning response options 1-4, suggesting little probability that a rating response will take one of these values. We see norml curves for plots corresponding to predictions concerning response options 5-9, suggesting how the probability that a response will take one of these values may rise and then fall, depending on the FACTOR3 score a person has. The plots suggest that for higher FACTOR3 scores the probability increases that a rating response will have a higher value."
@@ -686,6 +686,7 @@ I have drawn each probability curve in a different colour, and these colours mat
 #| fig-cap: "A plot showing marginal or conditional predicted probabilities that a rating response will have one value (among the 1-9 rating values possible), indicating how these predicted probabilities vary given variation in values of the standardized reading strategy (FACTOR3) variable"
 #| fig-alt: "The figure presents a plot showing marginal or conditional predicted probabilities that a rating rating will have one value (among the 1-9 rating values possible), indicating how these predicted probabilities vary given variation in values of the standardized reading strategy (FACTOR3) variable. We can see flat lines for plots corresponding to predictions concerning response options 1-4, suggesting little probability that a rating response will take one of these values. We see norml curves for plots corresponding to predictions concerning response options 5-9, suggesting how the probability that a response will take one of these values may rise and then fall, depending on the FACTOR3 score a person has. The plots suggest that for higher FACTOR3 scores the probability increases that a rating response will have a higher value."
 #| warning: false
+#| eval: false
 #| fig-width: 6
 #| fig-height: 5
 dat <- ggpredict(health.clmm, terms="z_FACTOR3 [all]")

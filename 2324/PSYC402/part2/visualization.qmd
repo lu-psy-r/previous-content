@@ -1851,7 +1851,7 @@ But this gets ahead of where we are now in our development of skills and underst
 #| fig-height: 5
 #| fig-width: 4
 #| warning: false
-plot(dat, add.data = TRUE)
+plot(dat)
 ```
 
 @fig-effects-dotwhisker-raw reveals the usefulness of plotting model estimates of effects alongside the raw observed outcomes. We can make two critical observations.

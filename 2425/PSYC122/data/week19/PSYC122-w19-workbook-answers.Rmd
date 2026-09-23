@@ -576,10 +576,10 @@ First create the plots:
 
 ```{r}
 dat.two <- ggpredict(model.two, "HLVA")
-plot.two <- plot(dat.two, colors = "bw", add.data = TRUE) + labs(title = "Study Two")
+plot.two <- plot(dat.two, colors = "bw") + labs(title = "Study Two")
 
 dat.122 <- ggpredict(model.122, "HLVA")
-plot.122 <- plot(dat.122, colors = "bw", add.data = TRUE) + labs(title = "Study PSYC122")
+plot.122 <- plot(dat.122, colors = "bw") + labs(title = "Study PSYC122")
 ```
 
 Then show the plots:

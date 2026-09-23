@@ -336,7 +336,7 @@ tea_dataset %>%
 Model output:
 
 ```{r echo = FALSE} 
-model1 <- wilcox.test(admin_tasks ~ tea_group, data = tea_dataset, paired = FALSE)
+model1 <- wilcox.test(admin_tasks ~ tea_group, data = tea_dataset)
 model1
 
 

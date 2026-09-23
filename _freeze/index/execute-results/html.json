@@ -1,0 +1,15 @@
+{
+  "hash": "0837ac4b645c05b79a9aef3c8e7ea7a1",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Statistics for Psychologists\"\npage-layout: full\nanchor-sections: false\nimage: \"Images/icon.png\"\ncss: https://lu-psy-r.github.io/essentials/archive/index.css\nfilters: [_core/remove_title.lua]\nsidebar: true\nback-to-top-navigation: false\n---\n\n\n\n::: callout-warning\n**This is the archive. Materials will not be updated.**\n:::\n\n![](Images/LUPsychology.svg){fig-alt=\"University Logo\" fig-align=\"center\"}\n\n\n\n::: {.cell}\n\n:::\n\n\n\n::: {.div style=\"font-size:2em;\"}\nPrevious Content\n:::\n\nThis is an archive of previous worksheets. They are **not** updated and if you are looking to follow along with the lectures in the labs, you should return to [the homepage](https://lu-psy-r.github.io) and click the appropriate year and then module.\n\nThe archived content is static and preserved for posterity. Unless you know exactly *what* you are looking through in the archive, it is strongly encouraged that you follow the current versions of the content. This is because this is actively updated and some functionality/interactivity/links in the archive may no longer work as expected. The current materials represent the information and content that we believe is the most valuable for you to understand about statistics and R, and should be favoured over the archive.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -2,6 +2,9 @@ project:
   type: website
   output-dir: docs
 
+execute:
+  freeze: auto
+  
 website:
   title: "Archive: Statistics for Psychologists"
   favicon: "Images/favicon.png"
@@ -21,40 +24,69 @@ website:
         href: https://lu-psy-r.github.io
 
 
-  sidebar:
+    sidebar:
     style: "floating"
     search: true
     collapse-level: 1
-    contents: 
+    contents:
       - section: "2023/2024"
         contents:
-          - section: PSYC121
-            contents: 2324/PSYC121/*
-          - section: PSYC122
-            contents: 2324/PSYC122/*
-          - section: PSYC402
-            contents: 
-              - auto: 2324/PSYC402/part1/*
-              - auto: 2324/PSYC402/part2/*
+          - section: "PSYC121"
+            contents:
+              - auto: "2324/PSYC121"
+          - section: "PSYC122"
+            contents:
+              - auto: "2324/PSYC122"
+          - section: "PSYC402"
+            contents:
+              - auto: "2324/PSYC402/part1"
+              - auto: "2324/PSYC402/part2"
+
       - section: "2024/2025"
         contents:
-          - section: PSYC121
-            contents: 2425/PSYC121/*
-          - section: PSYC122
-            contents: 2425/PSYC122/*
-          - section: PSYC214
-            contents: 2425/PSYC214/*
-          - section: PSYC234
-            contents: 2425/PSYC234/*
-          - section: PSYC411
-            contents: 
-              - auto: 2425/PSYC411/part1/*
-              - auto: 2425/PSYC411/part2/*
-          - section: PSYC412
-            contents: 
-              - auto: 2425/PSYC412/part1/*
-              - auto: 2425/PSYC412/part2/*
+          - section: "PSYC121"
+            contents:
+              - auto: "2425/PSYC121"
+          - section: "PSYC122"
+            contents:
+              - auto: "2425/PSYC122"
+          - section: "PSYC214"
+            contents:
+              - auto: "2425/PSYC214"
+          - section: "PSYC234"
+            contents:
+              - auto: "2425/PSYC234"
+          - section: "PSYC411"
+            contents:
+              - auto: "2425/PSYC411/part1"
+              - auto: "2425/PSYC411/part2"
+          - section: "PSYC412"
+            contents:
+              - auto: "2425/PSYC412/part1"
+              - auto: "2425/PSYC412/part2"
 
+      - section: "2025/2026"
+        contents:
+          - section: "PSYC121"
+            contents:
+              - auto: "2526/PSYC121"
+          - section: "PSYC122"
+            contents:
+              - auto: "2526/PSYC122"
+          - section: "PSYC214"
+            contents:
+              - auto: "2526/PSYC214"
+          - section: "PSYC234"
+            contents:
+              - auto: "2526/PSYC234"
+          - section: "PSYC411"
+            contents:
+              - auto: "2526/PSYC411/part1"
+              - auto: "2526/PSYC411/part2"
+          - section: "PSYC412"
+            contents:
+              - auto: "2526/PSYC412/part1"
+              - auto: "2526/PSYC412/part2"
 
 
   page-footer:

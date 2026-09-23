@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -84,18 +84,16 @@ div.csl-indent {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../2425/PSYC412/part2/05-ordinal.html" rel="next">
-<link href="../../../2425/PSYC412/part2/04-glmm.html" rel="prev">
 <link href="../../../Images/favicon.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-81f0983bf4b06e75e440f5f7bd87a0ae.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -160,7 +158,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -187,756 +185,10 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2425/PSYC121/index.html">2024/2025</a></li><li class="breadcrumb-item"><a href="../../../2425/PSYC412/part1/Week11.html">PSYC412</a></li><li class="breadcrumb-item"><a href="../../../2425/PSYC412/part2/05-ordinal-workbook.html">Week 20. Workbook introduction to Ordinal (Mixed-effects) Models</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">2023/2024</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../2324/PSYC121/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">PSYC121</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC121/Week1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC121/Week2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Descriptive statistics in RStudio</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC121/Week3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. DVs and IVs in RStudio</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC121/Week4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Customisation of graphs, and z-scores</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC121/Week5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Class test</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC121/Week6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6. Sampling, probability and binomial tests</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC121/Week7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7. Filtering data and testing means (one-sample t-test)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC121/Week8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8. Related-samples t-tests, plotting means and SE bars</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC121/Week9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9. Unrelated-samples t-test and Power</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../2324/PSYC122/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">PSYC122</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC122/Week11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Week 11 - Correlation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC122/Week12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Week 12 - Correlation Part 2</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC122/Week13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. Week 13 - The Linear Model</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC122/Week14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Week 14 - Chi-Square</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC122/Week16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Week 16 – Hypotheses, associations</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC122/Week17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6. Week 17 – Better understanding the linear model</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC122/Week18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7. Week 18 – Developing the linear model</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC122/Week19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8. Week 19 – Linear models – critical perspectives</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">PSYC402</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part1/Week11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Recap of the linear model and practising data-wrangling in R</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part1/Week12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Categorical predictors</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part1/Week13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. More on interactions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part1/Week14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Logistic regression</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part1/Week15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Poisson regression</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/01-multilevel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to multilevel data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/02-mixed.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to linear mixed-effects models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/03-mixed.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Developing linear mixed-effects models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/04-glmm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to Generalized Linear Mixed-effects Models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/05-ordinal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to Ordinal Models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/how.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">How</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction: the why</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/knowledge-ecosystem.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R knowledge</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/LICENSE.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LICENSE</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Summary</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/visualization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data visualization</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2324/PSYC402/part2/what.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">What</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">2024/2025</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../2425/PSYC121/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">PSYC121</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC121/Week1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC121/Week2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Descriptive statistics in RStudio</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC121/Week3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. DVs and IVs in RStudio</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC121/Week4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Customisation of graphs, and z-scores</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC121/Week5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Class test</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC121/Week6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6. Sampling, probability and binomial tests</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC121/Week7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7. Filtering data and testing means (one-sample t-test)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC121/Week8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8. Related-samples t-tests, plotting means and SE bars</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC121/Week9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9. Unrelated-samples t-test and Power</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../2425/PSYC122/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">PSYC122</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC122/Week11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Week 11 - Correlation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC122/Week12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Week 12 - Correlation Part 2</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC122/Week13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. Week 13 - The Linear Model</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC122/Week14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Week 14 - Chi-Square</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC122/Week16.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Week 16 – Hypotheses, associations</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC122/Week17.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6. Week 17 – Better understanding the linear model</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC122/Week18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7. Week 18 – Developing the linear model</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC122/Week19.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8. Week 19 – Linear models – critical perspectives</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../2425/PSYC214/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">PSYC214</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC214/Week1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC214/Week2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC214/Week3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC214/Week4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC214/Week5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC214/Week6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC214/Week7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC214/Week8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC214/Week9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistics for Psychologists</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../2425/PSYC234/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">PSYC234</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC234/Week1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Review of correlation, simple regression and demonstration of multiple regression</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC234/Week2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2. Multiple Regression Including Categorical Predictors</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC234/Week3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3. Multiple Regression Models that Include Interactions (Moderated Variables)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC234/Week4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4. Mediation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC234/Week5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">5. Factor Analysis and the Binomial Test</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC234/Week6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6. Wilcoxon rank-sum test and Wilcoxon signed-rank test</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC234/Week7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7. Kruskal-Wallis test and Friedman’s ANOVA</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC234/Week8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">8. Binary logistic regression models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC234/Week9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">9. Expanding on binary logistic regression</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
- <span class="menu-text">PSYC411</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part1/Week1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 1. Introducing Data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part1/Week2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 2. Manipulating data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part1/Week3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 3. Drawing graphs from data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part1/Week4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 4. Testing nominal data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part1/Week5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 5. Testing differences between groups</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part2/report-preface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 6. The structured research report – Quick start</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part2/how.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 6. How you can do the analysis work</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part2/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 6. Why we are asking you to do this</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part2/hypotheses-associations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 7. Hypotheses and associations</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part2/lm-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 8. Introduction to the linear model</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part2/visualization-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 9. Data visualization practices</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC411/part2/lm-dev.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 10. Developing the linear model</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
- <span class="menu-text">PSYC412</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part1/Week11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 11. Recap of the linear model and practising data-wrangling in R</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part1/Week12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 12. Categorical predictors</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part1/Week13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 13. More on interactions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part1/Week14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 14. Logistic regression</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part1/Week15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 15. Poisson regression</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/01-multilevel-workbook.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 16. Workbook introduction to multilevel data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/01-multilevel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 16. Conceptual introduction to multilevel data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/02-mixed-workbook.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 17. Workbook introduction to mixed-effects models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/02-mixed.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 17. Conceptual introduction to mixed-effects models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/03-mixed-workbook.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 18. Developing linear mixed-effects models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/03-mixed.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 18. Conceptual introduction to developing linear mixed-effects models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/04-glmm-workbook.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 19. Workbook introduction to Generalized Linear Mixed-effects Models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/04-glmm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 19. Conceptual introduction to Generalized Linear Mixed-effects Models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/05-ordinal-workbook.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week 20. Workbook introduction to Ordinal (Mixed-effects) Models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/05-ordinal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 20. Conceptual introduction to Ordinal (Mixed-effects) Models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/report-preface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 00. The structured research report – Requirements</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/00-quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 00. Writing reproducible reports using Quarto</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../2425/PSYC412/part2/LICENSE.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LICENSE</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -958,7 +210,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../2425/PSYC121/index.html">2024/2025</a></li><li class="breadcrumb-item"><a href="../../../2425/PSYC412/part1/Week11.html">PSYC412</a></li><li class="breadcrumb-item"><a href="../../../2425/PSYC412/part2/05-ordinal-workbook.html">Week 20. Workbook introduction to Ordinal (Mixed-effects) Models</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Week 20. Workbook introduction to Ordinal (Mixed-effects) Models</h1>
 <p class="subtitle lead">Written by Rob Davies</p>
@@ -2014,30 +1266,38 @@ Supply arguments directly to `.fns` through an anonymous function instead.
  5      : 352   3rd Qu.:1.0000   3rd Qu.: 9.413            
  4      : 176   Max.   :1.0000   Max.   :13.278            
  (Other): 228                                              
-             text.id                  text.question.id       z_AGE.V1      
- studyone.TEXT.37: 344   studyone.TEXT.37.CQ.1:  86    Min.   :-0.9826247  
- studyone.TEXT.39: 344   studyone.TEXT.37.CQ.2:  86    1st Qu.:-0.8620352  
- studyone.TEXT.72: 344   studyone.TEXT.37.CQ.3:  86    Median :-0.4399723  
- studyone.TEXT.14: 344   studyone.TEXT.37.CQ.4:  86    Mean   : 0.0000000  
- studyone.TEXT.50: 344   studyone.TEXT.39.CQ.1:  86    3rd Qu.: 0.9468060  
- studyone.TEXT.10: 224   studyone.TEXT.39.CQ.2:  86    Max.   : 2.8159420  
- (Other)         :2096   (Other)              :3524                        
-    z_SHIPLEY.V1          z_HLVA.V1          z_FACTOR3.V1    
- Min.   :-3.294105   Min.   :-2.6074887   Min.   :-4.205936  
- 1st Qu.:-0.543723   1st Qu.:-0.7330662   1st Qu.:-0.529155  
- Median : 0.189713   Median : 0.2041450   Median :-0.003900  
- Mean   : 0.000000   Mean   : 0.0000000   Mean   : 0.000000  
- 3rd Qu.: 0.739789   3rd Qu.: 0.6727506   3rd Qu.: 0.783981  
- Max.   : 1.289866   Max.   : 2.0785675   Max.   : 1.834490  
-                                                             
-     z_RDFKGL.V1     
- Min.   :-1.4644660  
- 1st Qu.:-0.6814594  
- Median : 0.0807363  
- Mean   : 0.0000000  
- 3rd Qu.: 0.6430616  
- Max.   : 2.3187650  
-                     </code></pre>
+             text.id                  text.question.id
+ studyone.TEXT.37: 344   studyone.TEXT.37.CQ.1:  86   
+ studyone.TEXT.39: 344   studyone.TEXT.37.CQ.2:  86   
+ studyone.TEXT.72: 344   studyone.TEXT.37.CQ.3:  86   
+ studyone.TEXT.14: 344   studyone.TEXT.37.CQ.4:  86   
+ studyone.TEXT.50: 344   studyone.TEXT.39.CQ.1:  86   
+ studyone.TEXT.10: 224   studyone.TEXT.39.CQ.2:  86   
+ (Other)         :2096   (Other)              :3524   
+           z_AGE.V1                   z_SHIPLEY.V1        
+ Min.   :-9.82624656687e-01   Min.   :-3.294105320780000  
+ 1st Qu.:-8.62035239524e-01   1st Qu.:-0.543722537102000  
+ Median :-4.39972279452e-01   Median : 0.189712871877000  
+ Mean   : 4.20000000000e-15   Mean   :-0.000000000000001  
+ 3rd Qu.: 9.46806017926e-01   3rd Qu.: 0.739789428612000  
+ Max.   : 2.81594198396e+00   Max.   : 1.289865985350000  
+                                                          
+          z_HLVA.V1                  z_FACTOR3.V1        
+ Min.   :-2.60748865140e+00   Min.   :-4.20593553983000  
+ 1st Qu.:-7.33066204487e-01   1st Qu.:-0.52915479589300  
+ Median : 2.04145018971e-01   Median :-0.00390040390093  
+ Mean   : 1.00000000000e-16   Mean   : 0.00000000000000  
+ 3rd Qu.: 6.72750630700e-01   3rd Qu.: 0.78398118408700  
+ Max.   : 2.07856746589e+00   Max.   : 1.83448996807000  
+                                                         
+         z_RDFKGL.V1         
+ Min.   :-1.46446595688e+00  
+ 1st Qu.:-6.81459422242e-01  
+ Median : 8.07363074868e-02  
+ Mean   : 6.99000000000e-14  
+ 3rd Qu.: 6.43061598419e-01  
+ Max.   : 2.31876495189e+00  
+                             </code></pre>
 </div>
 </div>
 </div>
@@ -2332,7 +1592,7 @@ rating ~ NATIVE.LANGUAGE + z_AGE + z_SHIPLEY + z_HLVA + z_FACTOR3 + z_RDFKGL
 data:    health
 
  link  threshold nobs logLik   AIC      niter max.grad cond.H 
- logit flexible  4040 -6874.81 13777.63 6(0)  1.23e-12 7.8e+01
+ logit flexible  4040 -6874.81 13777.63 6(0)  2.30e-13 7.8e+01
 
 Coefficients:
                      Estimate Std. Error z value Pr(&gt;|z|)    
@@ -2442,6 +1702,10 @@ Code
 <span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">data =</span> health)</span>
 <span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(health.clmm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in summary.clmm(health.clmm): Variance-covariance matrix of the
+parameters is not defined</code></pre>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Cumulative Link Mixed Model fitted with the Laplace approximation
 
@@ -2449,34 +1713,32 @@ formula: rating ~ z_AGE + z_SHIPLEY + z_HLVA + z_FACTOR3 + z_RDFKGL +
     (1 | ResponseId)
 data:    health
 
- link  threshold nobs logLik   AIC     niter       max.grad cond.H 
- logit flexible  4040 -4978.08 9984.16 1490(19081) 3.86e-03 3.5e+02
+ link  threshold nobs logLik   AIC     niter       max.grad cond.H
+ logit flexible  4040 -4978.08 9984.15 1534(20249) 1.23e+01 NaN   
 
 Random effects:
  Groups     Name        Variance Std.Dev.
- ResponseId (Intercept) 9.825    3.134   
+ ResponseId (Intercept) 9.829    3.135   
 Number of groups:  ResponseId 202 
 
 Coefficients:
-          Estimate Std. Error z value Pr(&gt;|z|)    
-z_AGE     -0.44314    0.23473  -1.888  0.05905 .  
-z_SHIPLEY  0.77129    0.26498   2.911  0.00361 ** 
-z_HLVA     0.20813    0.25608   0.813  0.41637    
-z_FACTOR3  1.68347    0.23830   7.065 1.61e-12 ***
-z_RDFKGL  -0.44346    0.03677 -12.060  &lt; 2e-16 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+          Estimate Std. Error z value Pr(&gt;|z|)
+z_AGE      -0.4404        NaN     NaN      NaN
+z_SHIPLEY   0.7721        NaN     NaN      NaN
+z_HLVA      0.2079        NaN     NaN      NaN
+z_FACTOR3   1.6846        NaN     NaN      NaN
+z_RDFKGL   -0.4434        NaN     NaN      NaN
 
 Threshold coefficients:
     Estimate Std. Error z value
-1|2  -9.3297     0.3452 -27.026
-2|3  -8.1413     0.2947 -27.629
-3|4  -6.5243     0.2631 -24.796
-4|5  -5.2159     0.2490 -20.947
-5|6  -3.4668     0.2370 -14.629
-6|7  -1.8481     0.2315  -7.984
-7|8   0.2966     0.2295   1.292
-8|9   3.0417     0.2346  12.966</code></pre>
+1|2  -9.3318        NaN     NaN
+2|3  -8.1437        NaN     NaN
+3|4  -6.5270        NaN     NaN
+4|5  -5.2186        NaN     NaN
+5|6  -3.4696        NaN     NaN
+6|7  -1.8508        NaN     NaN
+7|8   0.2939        NaN     NaN
+8|9   3.0392        NaN     NaN</code></pre>
 </div>
 </div>
 <p>If you inspect the code chunk, you can see that we have made two changes.</p>
@@ -2569,16 +1831,20 @@ Code
 <li>Fit a model</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>health.clmm <span class="ot">&lt;-</span> <span class="fu">clmm</span>(rating <span class="sc">~</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>                      </span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>                      z_AGE <span class="sc">+</span> z_SHIPLEY <span class="sc">+</span> z_HLVA <span class="sc">+</span> z_FACTOR3 <span class="sc">+</span> z_RDFKGL <span class="sc">+</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>                      </span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>                      (<span class="dv">1</span> <span class="sc">|</span> ResponseId),</span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>                    </span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Hess =</span> <span class="cn">TRUE</span>, <span class="at">link =</span> <span class="st">"logit"</span>,</span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">data =</span> health)</span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(health.clmm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>health.clmm <span class="ot">&lt;-</span> <span class="fu">clmm</span>(rating <span class="sc">~</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>                      </span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>                      z_AGE <span class="sc">+</span> z_SHIPLEY <span class="sc">+</span> z_HLVA <span class="sc">+</span> z_FACTOR3 <span class="sc">+</span> z_RDFKGL <span class="sc">+</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>                      </span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>                      (<span class="dv">1</span> <span class="sc">|</span> ResponseId),</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>                    </span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Hess =</span> <span class="cn">TRUE</span>, <span class="at">link =</span> <span class="st">"logit"</span>,</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">data =</span> health)</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(health.clmm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in summary.clmm(health.clmm): Variance-covariance matrix of the
+parameters is not defined</code></pre>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Cumulative Link Mixed Model fitted with the Laplace approximation
 
@@ -2586,41 +1852,39 @@ formula: rating ~ z_AGE + z_SHIPLEY + z_HLVA + z_FACTOR3 + z_RDFKGL +
     (1 | ResponseId)
 data:    health
 
- link  threshold nobs logLik   AIC     niter       max.grad cond.H 
- logit flexible  4040 -4978.08 9984.16 1490(19081) 3.86e-03 3.5e+02
+ link  threshold nobs logLik   AIC     niter       max.grad cond.H
+ logit flexible  4040 -4978.08 9984.15 1534(20249) 1.23e+01 NaN   
 
 Random effects:
  Groups     Name        Variance Std.Dev.
- ResponseId (Intercept) 9.825    3.134   
+ ResponseId (Intercept) 9.829    3.135   
 Number of groups:  ResponseId 202 
 
 Coefficients:
-          Estimate Std. Error z value Pr(&gt;|z|)    
-z_AGE     -0.44314    0.23473  -1.888  0.05905 .  
-z_SHIPLEY  0.77129    0.26498   2.911  0.00361 ** 
-z_HLVA     0.20813    0.25608   0.813  0.41637    
-z_FACTOR3  1.68347    0.23830   7.065 1.61e-12 ***
-z_RDFKGL  -0.44346    0.03677 -12.060  &lt; 2e-16 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+          Estimate Std. Error z value Pr(&gt;|z|)
+z_AGE      -0.4404        NaN     NaN      NaN
+z_SHIPLEY   0.7721        NaN     NaN      NaN
+z_HLVA      0.2079        NaN     NaN      NaN
+z_FACTOR3   1.6846        NaN     NaN      NaN
+z_RDFKGL   -0.4434        NaN     NaN      NaN
 
 Threshold coefficients:
     Estimate Std. Error z value
-1|2  -9.3297     0.3452 -27.026
-2|3  -8.1413     0.2947 -27.629
-3|4  -6.5243     0.2631 -24.796
-4|5  -5.2159     0.2490 -20.947
-5|6  -3.4668     0.2370 -14.629
-6|7  -1.8481     0.2315  -7.984
-7|8   0.2966     0.2295   1.292
-8|9   3.0417     0.2346  12.966</code></pre>
+1|2  -9.3318        NaN     NaN
+2|3  -8.1437        NaN     NaN
+3|4  -6.5270        NaN     NaN
+4|5  -5.2186        NaN     NaN
+5|6  -3.4696        NaN     NaN
+6|7  -1.8508        NaN     NaN
+7|8   0.2939        NaN     NaN
+8|9   3.0392        NaN     NaN</code></pre>
 </div>
 </div>
 <ol start="2" type="1">
 <li>Get predictions about outcome variation, given the model</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(health.clmm, <span class="at">terms=</span><span class="st">"z_FACTOR3 [all]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(health.clmm, <span class="at">terms=</span><span class="st">"z_FACTOR3 [all]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>In this line, we use <code>ggpredict()</code> to work with some model information, assuming we previously fitted a model and gave it a name (here, <code>health.clmm</code>).</li>
@@ -2631,14 +1895,7 @@ Threshold coefficients:
 <li>Show those predictions in a plot</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05-ordinal-workbook_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -2647,7 +1904,7 @@ Threshold coefficients:
 <p><strong>Pract.Q.12.</strong> What does the plot show us?</p>
 </blockquote>
 <ul>
-<li>Fit the model, get the predictions, and visualize them; see <a href="#fig-rating-clmm-factor3-predictions" class="quarto-xref">Figure&nbsp;2</a>.</li>
+<li>Fit the model, get the predictions, and visualize them; see <strong>?@fig-rating-clmm-factor3-predictions</strong>.</li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
@@ -2662,20 +1919,8 @@ Code
 <div id="callout-39" class="callout-39-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(health.clmm, <span class="at">terms=</span><span class="st">"z_FACTOR3 [all]"</span>)</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="fig-rating-clmm-factor3-predictions" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The figure presents a grid of plots showing marginal or conditional -- adjusted prediction values -- predicted ratings and how they vary given variation in values of the standardized reading strategy (FACTOR3) variable. We can see flat lines for plots corresponding to predictions concerning response options 1-4, suggesting little probability that a rating response will take one of these values. We see norml curves for plots corresponding to predictions concerning response options 5-9, suggesting how the probability that a response will take one of these values may rise and then fall, depending on the FACTOR3 score a person has. The plots suggest that for higher FACTOR3 scores the probability increases that a rating response will have a higher value.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-rating-clmm-factor3-predictions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="05-ordinal-workbook_files/figure-html/fig-rating-clmm-factor3-predictions-1.png" class="img-fluid figure-img" alt="The figure presents a grid of plots showing marginal or conditional -- adjusted prediction values -- predicted ratings and how they vary given variation in values of the standardized reading strategy (FACTOR3) variable. We can see flat lines for plots corresponding to predictions concerning response options 1-4, suggesting little probability that a rating response will take one of these values. We see norml curves for plots corresponding to predictions concerning response options 5-9, suggesting how the probability that a response will take one of these values may rise and then fall, depending on the FACTOR3 score a person has. The plots suggest that for higher FACTOR3 scores the probability increases that a rating response will have a higher value." width="480">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rating-clmm-factor3-predictions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: A grid of plots showing marginal or conditional predicted probabilities that a rating response will have one value (among the 1-9 rating values possible), indicating how these predicted probabilities vary given variation in values of the standardized reading strategy (FACTOR3) variable.
-</figcaption>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(health.clmm, <span class="at">terms=</span><span class="st">"z_FACTOR3 [all]"</span>)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -2848,6 +2093,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -2958,6 +2205,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -3183,18 +2431,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../../2425/PSYC412/part2/04-glmm.html" class="pagination-link" aria-label="Week 19. Conceptual introduction to Generalized Linear Mixed-effects Models">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 19. Conceptual introduction to Generalized Linear Mixed-effects Models</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../../2425/PSYC412/part2/05-ordinal.html" class="pagination-link" aria-label="Week 20. Conceptual introduction to Ordinal (Mixed-effects) Models">
-        <span class="nav-page-text">Week 20. Conceptual introduction to Ordinal (Mixed-effects) Models</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
